@@ -1,0 +1,12 @@
+.socials {
+  display: flex;
+  gap: 24px;
+}
+.socials__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-white-80);
+  border-radius: 8px;
+  padding: 9px;
+}/*# sourceMappingURL=Socials.css.map */

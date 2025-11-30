@@ -1,0 +1,40 @@
+.modal__overlay {
+  position: relative;
+  background-color: var(--color-black-50);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__wrapper {
+  position: absolute;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  width: 420px;
+  border-radius: 24px;
+  padding: 64px 40px;
+}
+.modal__logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.modal__logo-image, .modal__logo-text {
+  overflow: visible;
+  flex-shrink: 0;
+}
+.modal__close-btn {
+  top: 0;
+  right: -24px;
+  transform: translateX(100%);
+}/*# sourceMappingURL=Modal.css.map */

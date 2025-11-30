@@ -1,0 +1,64 @@
+.btn {
+    cursor: pointer;
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+
+    //variant
+
+    &--primary {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        background-color: var(--color-montana);
+        border-radius: 28px;
+
+        &:hover,
+        &:focus-visible {
+            background-color: var(--color-blue-jeans);
+
+        }
+
+    }
+
+    &--invert {
+        color: var(--color-black);
+        background-color: var(--color-white);
+
+        &:hover,
+        &:focus-visible {
+            color: var(--color-white);
+
+        }
+    }
+
+    &--menu {
+        font-size: 24px;
+        line-height: 32px;
+        background-color: transparent;
+    }
+
+
+
+    &--close {
+        padding: 15px;
+        background-color: var(--color-white);
+        color: var(--color-black);
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    //sizes
+
+    &--m {
+        padding: 16px 48px;
+    }
+
+
+    &--s {
+        padding: 16px 22px;
+    }
+
+}

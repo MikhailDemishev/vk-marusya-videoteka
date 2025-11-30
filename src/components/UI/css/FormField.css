@@ -1,0 +1,10 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+}
+.form-field__error-text {
+  color: var(--color-embarrassment);
+}/*# sourceMappingURL=FormField.css.map */

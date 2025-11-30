@@ -1,0 +1,27 @@
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 0 8px;
+}
+.register-form__error-text {
+  color: var(--color-embarrassment);
+  margin: 0 0 12px;
+}
+.register-form .custom-input--auth:first-child .custom-input__icon {
+  width: 22px;
+  height: 18px;
+}
+.register-form .custom-input--auth:nth-child(2) .custom-input__icon,
+.register-form .custom-input--auth:nth-child(3) .custom-input__icon {
+  width: 16px;
+  height: 21px;
+}
+.register-form .custom-input--auth:nth-child(4) .custom-input__icon,
+.register-form .custom-input--auth:nth-child(5) .custom-input__icon {
+  width: 22px;
+  height: 12px;
+}
+.register-form .custom-input--auth:last-of-type {
+  margin: 0 0 12px;
+}/*# sourceMappingURL=RegisterForm.css.map */

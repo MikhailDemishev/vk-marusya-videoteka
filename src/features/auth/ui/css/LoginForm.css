@@ -1,0 +1,21 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 0 8px;
+}
+.login-form__error-text {
+  color: var(--color-embarrassment);
+  margin: 0 0 12px;
+}
+.login-form .custom-input--auth:first-child .custom-input__icon {
+  width: 22px;
+  height: 18px;
+}
+.login-form .custom-input--auth:nth-child(2) .custom-input__icon {
+  width: 22px;
+  height: 12px;
+}
+.login-form .custom-input--auth:last-of-type {
+  margin: 0 0 12px;
+}/*# sourceMappingURL=LoginForm.css.map */
