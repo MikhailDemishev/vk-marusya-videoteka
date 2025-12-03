@@ -7,4 +7,4 @@ export const ProfileSchema = z.object({
     email: z.string(),
 });
 
-export type ProfileType = z.infer<typeof ProfileSchema>;
+export type ProfileResponse = z.infer<typeof ProfileSchema>;

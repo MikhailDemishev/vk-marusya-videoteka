@@ -1,20 +1,18 @@
 import { useMutation } from "@tanstack/react-query";
 import { logoutUser } from "../../../api/auth/logout/logout.api";
 import { queryClient } from "../../../main";
-import { useAppDispatch } from "../../../app/hooks";
-import { setAuthStatus } from "../model/authStatusSlice";
 
 
 export function useLogout() {
-    const dispatch = useAppDispatch();
 
 
     const loginMutation = useMutation({
         mutationFn: () => logoutUser(),
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["auth", "logout"] });
+            queryClient.invalidateQueries({ queryKey: ["profile"] });
+            queryClient.resetQueries({ queryKey: ["profile"] });
+
             console.log('logged out');
-            dispatch(setAuthStatus("noAuthorized"))
         },
 
         onError: (error: unknown) => {

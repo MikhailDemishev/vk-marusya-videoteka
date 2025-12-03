@@ -4,14 +4,17 @@ import { CustomInput } from "../../UI/Input/Input";
 import sprite from '/src/assets/images/sprite/sprite.svg';
 import { useAppDispatch } from "../../../app/hooks";
 import { openModal } from "../../../features/modal/modalOpenCloseSlice";
-import { selectAuthStatus, setAuthStatus } from "../../../features/auth/model/authStatusSlice";
+
 import "./Header.scss";
-import { useSelector } from "react-redux";
+import { useUserProfile } from "../../../features/auth/hooks/useProfile";
+import { useLogout } from "../../../features/auth/hooks/useLogout";
 
 
 export const Header = () => {
     const dispatch = useAppDispatch();
-    const authStatus = useSelector(selectAuthStatus);
+    const { data: user } = useUserProfile();
+    const logout = useLogout()
+
 
     return (
         <header className="header">
@@ -46,23 +49,28 @@ export const Header = () => {
 
                         />
                     </div>
-                    {authStatus === "noAuthorized" && (
+                    {!user && (
                         <Button
                             variant="menu"
                             onClick={() => dispatch(openModal("auth"))}
-                        >Войти</Button>
+                        >
+                            Войти
+                        </Button>
                     )}
 
-                    {authStatus === "authorized" && (
+                    {user && (
                         <Button
                             variant="menu"
-                            onClick={() => dispatch(setAuthStatus("noAuthorized"))}
-                        >Выйти</Button>
+                            onClick={() => logout.mutate()}
+                        >
+                            Выйти
+                        </Button>
                     )}
+
 
                 </div>
             </div>
 
-        </header>
+        </header >
     )
 }

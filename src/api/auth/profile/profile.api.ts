@@ -1,11 +1,11 @@
 import { apiRequest } from "../../http";
 import { ProfileSchema } from "./profile.schemas";
-import { type ProfileType } from "./profile.schemas";
+import { type ProfileResponse } from "./profile.schemas";
 
 
-export function userProfile() {
-    return apiRequest<ProfileType>({
+export function getUserProfile() {
+    return apiRequest<ProfileResponse>({
         schema: ProfileSchema,
-        extension: 'profile'
+        url: 'profile'
     })
 }

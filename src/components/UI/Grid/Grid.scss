@@ -1,8 +1,14 @@
-.movie-grid {
+.movie-grid,
+.genres-grid {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 40px 64px;
+}
+
+
+.genres-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }

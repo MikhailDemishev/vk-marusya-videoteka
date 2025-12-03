@@ -4,7 +4,6 @@ import { type LoginType } from "../../../api/auth/login/login.schemas";
 import { queryClient } from "../../../main";
 import { useAppDispatch } from "../../../app/hooks";
 import { closeModal } from "../../modal/modalOpenCloseSlice";
-import { setAuthStatus } from "../model/authStatusSlice";
 
 
 export function useLogin() {
@@ -14,9 +13,8 @@ export function useLogin() {
     const loginMutation = useMutation({
         mutationFn: (data: LoginType) => loginUser(data),
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["auth", "login"] });
+            queryClient.invalidateQueries({ queryKey: ["profile"] });
             console.log('successful Login');
-            dispatch(setAuthStatus("authorized"))
             dispatch(closeModal())
         },
 

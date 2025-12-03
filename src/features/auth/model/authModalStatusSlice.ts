@@ -1,8 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { type AuthType } from "./auth.types";
 
-
-
 interface IAuthModalStatus {
     status: AuthType;
 }
