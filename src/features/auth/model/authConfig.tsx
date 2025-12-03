@@ -1,5 +1,5 @@
 
-import type { AuthConfig, LoginKeys, RegisterKeys } from "./types"
+import type { AuthConfig, LoginKeys, RegisterKeys } from "./auth.types"
 import { LoginForm } from "../ui/LoginForm/LoginForm"
 import { RegisterForm } from "../ui/RegisterForm/RegisterForm"
 

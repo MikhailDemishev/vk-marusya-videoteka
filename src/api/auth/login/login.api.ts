@@ -7,7 +7,7 @@ export function loginUser(data: LoginType) {
     return apiRequest<LoginResponse>({
         schema: LoginResponseSchema,
         method: 'POST',
-        extension: 'auth/login',
-        body: data,
+        url: 'auth/login',
+        data: data,
     })
 }

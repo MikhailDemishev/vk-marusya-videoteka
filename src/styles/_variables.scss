@@ -28,20 +28,24 @@ $ff-main: "Play", "Arial", sans-serif;
     --color-circumorbital-ring: #6A5DC2;
     --color-circumorbital-ring: #6A5DC2;
     --color-embarrassment: #FF7575;
+    --color-flamingo: #DC5DFC;
+    --color-raven: #0A0B0B;
 
 
-    --color-gradient: linear-gradient(130.89deg,
-            #4465DE 0%,
-            #273D86 35.67%,
-            #2A365C 58.5%,
-            #1F222E 100%);
+    --color-gradient: linear-gradient(180deg,
+            #000000 0%,
+            rgba(39, 36, 36, 0.70) 100%),
+        linear-gradient(178deg,
+            rgba(39, 135, 245, 0.9) 0%,
+            rgba(163, 147, 245, 0.9) 100%);
+
+    // Animation
+    --transition-300: ease-in 0.3s;
+    --transition-700: ease-in 0.7s;
+
 }
 
 /* Breakpoints */
 /* ------------------------------------ */
 $vp-tablet: 768px;
 $vp-desktop: 1024px;
-
-// Animation
-$transition-300: ease-in 0.3s;
-$transition-700: ease-in 0.7s;

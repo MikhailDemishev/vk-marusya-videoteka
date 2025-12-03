@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { get10Movies } from "../../../api/movies/movies.api";
+import { get10Movies } from "../../../api/movies/movies/movies.api";
 
 
 export function useTopTenMovies() {

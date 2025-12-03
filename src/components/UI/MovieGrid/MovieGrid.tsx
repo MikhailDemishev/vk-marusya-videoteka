@@ -1,6 +1,6 @@
-import type { MovieListT } from "../../api/movies/movies.schemas";
+import type { MovieListT } from "../../../api/movies/movies/movies.schemas";
 import type { FC } from "react";
-import { MovieCard } from "../UI/MovieCard/MovieCard";
+import { MovieCard } from "../../Movie/MovieCard/MovieCard";
 import "./MovieGrid.scss";
 
 

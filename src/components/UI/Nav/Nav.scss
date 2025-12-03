@@ -5,6 +5,30 @@
     &__link {
         font-size: 24px;
         line-height: 32px;
+        position: relative;
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: var(--color-flamingo);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-300);
+        }
+
+        &--active {
+
+            &::after,
+            &::after {
+                transform: scaleX(1);
+            }
+
+
+        }
 
     }
 }

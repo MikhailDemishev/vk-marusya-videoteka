@@ -1,0 +1,41 @@
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &__row {
+        display: grid;
+        grid-template-columns: 320px auto;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        gap: 8px;
+    }
+
+    &__label {
+        display: flex;
+        gap: 8px;
+
+        &-line {
+            height: 1px;
+            border: 1px dashed var(--color-translucent);
+            flex-grow: 1;
+            transform: translateY(17px);
+        }
+    }
+
+    // &__label::after {
+    //     display: block;
+    //     content: "";
+    //     height: 1px;
+    //     width: 100%;
+    //     background-color: var(--color-translucent);
+    //     border: 1px dashed var(--color-translucent);
+    //     width: 239;
+
+
+
+    // }
+
+
+}

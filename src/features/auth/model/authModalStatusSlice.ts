@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { type AuthType } from "./types";
+import { type AuthType } from "./auth.types";
 
 
 

@@ -25,7 +25,7 @@ export const Nav: FC<INavProps> = ({
                 <NavLink
                     key={item.to}
                     to={item.to}
-                    className="nav__link"
+                    className={({ isActive }) => isActive ? "nav__link nav__link--active" : "nav__link"}
                 >
                     {item.label}
                 </NavLink>

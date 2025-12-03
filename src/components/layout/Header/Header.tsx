@@ -13,13 +13,12 @@ export const Header = () => {
     const dispatch = useAppDispatch();
     const authStatus = useSelector(selectAuthStatus);
 
-
     return (
         <header className="header">
             <div className="container">
                 <div className="header__inner">
                     <div className="header__left">
-                        <a className="header-logo__link" href="#" aria-label="Ссылка на главную страницу">
+                        <a className="header-logo__link" href="/" aria-label="Ссылка на главную страницу">
                             <svg className="header__logo-image" width="24" height="32" aria-hidden="true">
                                 <use href={`${sprite}#marusya-symbol`} xlinkHref={`${sprite}#marusya-symbol`} />
                             </svg>

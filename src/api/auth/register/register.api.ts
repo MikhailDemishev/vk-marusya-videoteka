@@ -6,7 +6,7 @@ export function registerUser(data: RegisterType) {
     return apiRequest<RegisterResponse>({
         schema: RegisterResponseSchema,
         method: 'POST',
-        extension: 'user',
-        body: data,
+        url: 'user',
+        data: data,
     })
 }

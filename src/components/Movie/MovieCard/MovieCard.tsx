@@ -24,8 +24,6 @@ export const MovieCard: FC<IMovieCard> = ({ id, index, title, imageUrl, }) => {
                     <span className="movie-card__counter">{index}</span>
                 )
             }
-
         </Link>
-
     )
 }

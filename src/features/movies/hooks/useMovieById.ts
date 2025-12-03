@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getMovieById } from "../../../api/movies/movies.api";
+import { getMovieById } from "../../../api/movies/movies/movies.api";
 
 
 export function useMovieById(id: number | string) {

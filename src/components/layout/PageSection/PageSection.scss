@@ -1,0 +1,29 @@
+.page-section {
+    padding: 64px 0 160px;
+
+    &--main,
+    &--film-details {
+        padding: 40px 0 120px;
+    }
+
+    &--genres,
+    &--genres-list {
+        .page-section__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 64px;
+        }
+    }
+
+
+    &__title {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 48px;
+        margin: 0 0 64px;
+    }
+
+
+}

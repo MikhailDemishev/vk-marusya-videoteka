@@ -1,33 +1,35 @@
-import { MovieBanner } from "../../components/MovieBanner/MovieBanner"
+import { MovieBanner } from "../../components/Movie/MovieBanner/MovieBanner"
 import { useTopTenMovies, useRandomMovie } from "../../features/movies/hooks";
-import { MovieGrid } from "../../components/MovieGrid/MovieGrid"
+import { MovieGrid } from "../../components/Movie/MovieGrid/MovieGrid"
+import { SectionLayout } from "../../components/layout/PageSection/PageSection";
+import { PageBoundary } from "../../components/layout/PageBoundary/PageBoundary";
 import "./HomePage.scss";
 
 export const HomePage = () => {
     const randomMovieQuery = useRandomMovie()
     const topTenQuery = useTopTenMovies()
-
-
-
     return (
-        <div className="main-page">
-            <MovieBanner
-                movie={randomMovieQuery.data ?? null}
-                isLoading={randomMovieQuery.isLoading}
-                error={randomMovieQuery.error}
-                mode="home"
-                refetch={randomMovieQuery.refetch}
-            ></MovieBanner>
-            <section className="main-page__content">
-                <h2 className="main-page__title">Топ 10 фильмов</h2>
-                <MovieGrid
-                    movies={topTenQuery.data ?? []}
-                    showIndex
-                >
-                </MovieGrid>
-            </section>
+        <>
+            <PageBoundary
+                isLoading={randomMovieQuery.isPending || topTenQuery.isPending}
+                isError={randomMovieQuery.error || topTenQuery.error}>
+                <div className="main-page">
+                    <MovieBanner
+                        movie={randomMovieQuery.data ?? null}
+                        mode="home"
+                        refetch={randomMovieQuery.refetch}
+                    ></MovieBanner>
+                    <SectionLayout
+                        title="Топ 10 фильмов"
+                        className="page-section--main">
+                        <MovieGrid
+                            movies={topTenQuery.data ?? []}
+                            showIndex>
+                        </MovieGrid>
+                    </SectionLayout>
+                </div>
+            </PageBoundary>
 
-        </div>
-
+        </>
     )
 }
