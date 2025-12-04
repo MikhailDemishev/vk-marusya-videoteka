@@ -1,7 +1,6 @@
-import { apiRequest } from "../../http";
-import { MovieSchema } from "./movies.schemas";
-import { MovieList, type Movie } from "./movies.schemas";
-import type { GenreKey } from "../../../features/movies/model/genre.types";
+import { apiRequest } from "../http";
+import type { GenreKey } from "../../features/movies/model/genre.types";
+import { MovieList, MovieSchema, type Movie } from "./movies.schemas";
 
 
 export function getMovieById(id: number | string) {

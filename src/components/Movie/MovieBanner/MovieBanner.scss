@@ -80,5 +80,13 @@
         aspect-ratio: 680 / 552;
     }
 
+    &__button {
+        &--active {
+            .movie-banner__logo-image {
+                fill: var(--color-winterspring-lilac);
+            }
+        }
+    }
+
 
 }

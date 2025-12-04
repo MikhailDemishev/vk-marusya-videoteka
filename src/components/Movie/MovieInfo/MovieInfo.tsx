@@ -1,4 +1,4 @@
-import type { Movie } from "../../../api/movies/movies/movies.schemas";
+import type { Movie } from "../../../api/movies/movies.schemas";
 import type { FC } from "react";
 import "./MovieInfo.scss";
 

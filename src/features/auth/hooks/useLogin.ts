@@ -15,6 +15,7 @@ export function useLogin() {
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["profile"] });
             console.log('successful Login');
+            console.log("COOKIES:", document.cookie);
             dispatch(closeModal())
         },
 

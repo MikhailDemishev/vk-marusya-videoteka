@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getMoviesByGenre } from "../../../api/movies/movies/movies.api";
+import { getMoviesByGenre } from "../../../api/movies/movies.api";
 import type { GenreKey } from "../model/genre.types";
 
 

@@ -2,20 +2,16 @@ import { Button } from "../../UI/Button/Button"
 import { Nav } from "../../UI/Nav/Nav";
 import { CustomInput } from "../../UI/Input/Input";
 import sprite from '/src/assets/images/sprite/sprite.svg';
-import { useAppDispatch } from "../../../app/hooks";
-import { openModal } from "../../../features/modal/modalOpenCloseSlice";
+import { useUserProfile } from "../../../features/auth/hooks/useProfile";
+import { useAuthModalActions } from "../../../features/auth/hooks/useAuthModal";
+
 
 import "./Header.scss";
-import { useUserProfile } from "../../../features/auth/hooks/useProfile";
-import { useLogout } from "../../../features/auth/hooks/useLogout";
 
 
 export const Header = () => {
-    const dispatch = useAppDispatch();
     const { data: user } = useUserProfile();
-    const logout = useLogout()
-
-
+    const { handleOpenAuthModal, handleLogOut } = useAuthModalActions()
     return (
         <header className="header">
             <div className="container">
@@ -52,7 +48,7 @@ export const Header = () => {
                     {!user && (
                         <Button
                             variant="menu"
-                            onClick={() => dispatch(openModal("auth"))}
+                            onClick={handleOpenAuthModal}
                         >
                             Войти
                         </Button>
@@ -61,7 +57,7 @@ export const Header = () => {
                     {user && (
                         <Button
                             variant="menu"
-                            onClick={() => logout.mutate()}
+                            onClick={handleLogOut}
                         >
                             Выйти
                         </Button>

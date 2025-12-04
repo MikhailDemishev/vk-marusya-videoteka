@@ -1,4 +1,4 @@
-import type { Movie } from "../../../api/movies/movies/movies.schemas";
+import type { Movie } from "../../../api/movies/movies.schemas";
 import { Button } from "../../UI/Button/Button";
 import type { FC } from "react";
 import { formatMinutes } from "../../../utils/formatMinutes";
@@ -7,6 +7,7 @@ import sprite from '/src/assets/images/sprite/sprite.svg';
 import { Link } from "react-router-dom";
 import "./MovieBanner.scss";
 import { translatedGenres } from "../../../utils/translateGenres";
+import { useAddToFavorites } from "../../../features/favorites/hooks/useAddToFavorites";
 
 
 interface IMovieBanner {
@@ -26,8 +27,9 @@ export const MovieBanner: FC<IMovieBanner> = ({
     }
 
 
-
     const genresToRender = translatedGenres(movie!.genres)
+    const { handleAddToFavorites, filmInFavorites } = useAddToFavorites()
+
     return (
         <>
             <div className="movie-banner">
@@ -57,9 +59,10 @@ export const MovieBanner: FC<IMovieBanner> = ({
                                 size="m"
                                 onClick={testClick}
                             >Трейлер</Button>
-                            <Button className="movie-banner__button"
-                                size="s">
-                                <svg className="header__logo-image" width="20" height="19" aria-hidden="true">
+                            <Button className={filmInFavorites(movie!.id) ? "movie-banner__button--added" : "movie-banner__button"}
+                                size="s"
+                                onClick={() => handleAddToFavorites(movie!.id)}>
+                                <svg className="movie-banner__logo-image" width="20" height="19" aria-hidden="true">
                                     <use href={`${sprite}#heart`} xlinkHref={`${sprite}#heart`} />
                                 </svg>
                             </Button>
@@ -71,7 +74,7 @@ export const MovieBanner: FC<IMovieBanner> = ({
                                             className="movie-banner__button"
                                             size="s"
                                             onClick={() => refetch?.()}>
-                                            <svg className="header__logo-image" width="20" height="20" aria-hidden="true">
+                                            <svg className="movie-banner__logo-image" width="20" height="20" aria-hidden="true">
                                                 <use href={`${sprite}#refresh`} xlinkHref={`${sprite}#refresh`} />
                                             </svg>
                                         </Button>

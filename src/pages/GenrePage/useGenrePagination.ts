@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useMoviesByGenre } from "../../features/movies/hooks";
 import type { GenreKey } from "../../features/movies/model/genre.types";
-import type { Movie } from "../../api/movies/movies/movies.schemas";
+import type { Movie } from "../../api/movies/movies.schemas";
 
 export const useGenrePagination = (genre: GenreKey,) => {
     const [page, setPage] = useState(1);

@@ -6,6 +6,7 @@ export const MovieSchema = z.object({
     originalTitle: z.string(),
     language: z.string(),
     releaseYear: z.coerce.number(),
+    relaseYear: z.coerce.number().optional(),
     releaseDate: z.string(),
 
     genres: z.array(z.string()),
