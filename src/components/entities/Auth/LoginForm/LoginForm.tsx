@@ -1,13 +1,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { LoginValidateSchema, type ValidateLoginForm } from "../../../../api/auth/login/login.schemas";
-import { Button } from "../../../../components/UI/Button/Button";
-import { CustomInput } from "../../../../components/UI/Input/Input";
-import { useLogin } from "../../hooks/useLogin";
-import { AUTH_UI } from "../../model/authConfig";
-
-import "./LoginForm.scss";
 import { useForm } from "react-hook-form";
-import { FormField } from "../../../../components/UI/FormField/FormField";
+import { AUTH_UI } from "../../../../features/auth/model/authConfig";
+import { LoginValidateSchema, type ValidateLoginForm } from "../../../../api/auth/login/login.schemas";
+import { useLogin } from "../../../../features/auth/hooks/useLogin";
+import { FormField } from "../../../UI/FormField/FormField";
+import { CustomInput } from "../../../UI/Input/Input";
+import { Button } from "../../../UI/Button/Button";
+import "./LoginForm.scss";
 
 
 export const LoginForm = (

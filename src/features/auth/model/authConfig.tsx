@@ -1,7 +1,7 @@
 
 import type { AuthConfig, LoginKeys, RegisterKeys } from "./auth.types"
-import { LoginForm } from "../ui/LoginForm/LoginForm"
-import { RegisterForm } from "../ui/RegisterForm/RegisterForm"
+import { LoginForm } from "../../../components/entities/Auth/LoginForm/LoginForm"
+import { RegisterForm } from "../../../components/entities/Auth/RegisterForm/RegisterForm"
 
 export const AUTH_UI: {
     login: AuthConfig<LoginKeys>;

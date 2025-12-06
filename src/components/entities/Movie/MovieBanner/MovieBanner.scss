@@ -81,9 +81,10 @@
     }
 
     &__button {
-        &--active {
+        &--added {
             .movie-banner__logo-image {
-                fill: var(--color-winterspring-lilac);
+                color: var(--color-winterspring-lilac);
+                fill: var(--color-winterspring-lilac) !important;
             }
         }
     }

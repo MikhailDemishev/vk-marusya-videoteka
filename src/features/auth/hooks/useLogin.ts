@@ -2,7 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import { loginUser } from "../../../api/auth/login/login.api";
 import { type LoginType } from "../../../api/auth/login/login.schemas";
 import { queryClient } from "../../../main";
-import { useAppDispatch } from "../../../app/hooks";
+import { useAppDispatch } from "../../../app/hooks/reduxHooks";
 import { closeModal } from "../../modal/modalOpenCloseSlice";
 
 

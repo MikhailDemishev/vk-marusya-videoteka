@@ -7,7 +7,8 @@ import { Button } from "../../components/UI/Button/Button";
 import { translate1Genre } from "../../utils/translateGenres";
 import { Grid } from "../../components/UI/Grid/Grid";
 import "./GenrePage.scss";
-import { MovieCard } from "../../components/Movie/MovieCard/MovieCard";
+import { MovieCard } from "../../components/entities/Movie/MovieCard/MovieCard";
+import { PageLayout } from "../../components/layout/PageLayout/PageLayout";
 
 export const GenrePage = () => {
     const { genre } = useParams()
@@ -16,28 +17,28 @@ export const GenrePage = () => {
 
     return (
         <PageBoundary isLoading={isPending} isError={error}>
-            <SectionLayout className="page-section--genres" title={translate1Genre(genre!)}>
+            <PageLayout pageName="genre">
+                <SectionLayout sectionName="genre" title={translate1Genre(genre!)}>
+                    <Grid
+                        items={movies}
+                        className="movie"
+                        renderItem={(item) => (
+                            <MovieCard
+                                id={item.id}
+                                title={item.title}
+                                imageUrl={item.backdropUrl}
+                            />
+                        )}
+                    >
+                    </Grid>
+                    {
+                        hasMore && (
+                            <Button size="m" className="genre__btn" onClick={loadMore} >Показать еще</Button>
+                        )
+                    }
 
-                <Grid
-                    items={movies}
-                    className="movie"
-                    renderItem={(item) => (
-                        <MovieCard
-                            id={item.id}
-                            title={item.title}
-                            imageUrl={item.backdropUrl}
-                        />
-                    )}
-                >
-
-                </Grid>
-                {
-                    hasMore && (
-                        <Button size="m" onClick={loadMore} >Показать еще</Button>
-                    )
-                }
-
-            </SectionLayout>
+                </SectionLayout>
+            </PageLayout>
         </PageBoundary>
     )
 }

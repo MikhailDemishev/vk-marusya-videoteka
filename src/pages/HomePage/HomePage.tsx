@@ -1,10 +1,11 @@
-import { MovieBanner } from "../../components/Movie/MovieBanner/MovieBanner"
+import { MovieBanner } from "../../components/entities/Movie/MovieBanner/MovieBanner"
 import { useTopTenMovies, useRandomMovie } from "../../features/movies/hooks";
 import { Grid } from "../../components/UI/Grid/Grid";
 import { SectionLayout } from "../../components/layout/PageSection/PageSection";
 import { PageBoundary } from "../../components/layout/PageBoundary/PageBoundary";
+import { MovieCard } from "../../components/entities/Movie/MovieCard/MovieCard";
+import { PageLayout } from "../../components/layout/PageLayout/PageLayout";
 import "./HomePage.scss";
-import { MovieCard } from "../../components/Movie/MovieCard/MovieCard";
 
 export const HomePage = () => {
     const randomMovieQuery = useRandomMovie()
@@ -14,7 +15,7 @@ export const HomePage = () => {
             <PageBoundary
                 isLoading={randomMovieQuery.isPending || topTenQuery.isPending}
                 isError={randomMovieQuery.error || topTenQuery.error}>
-                <div className="main-page">
+                <PageLayout pageName="home">
                     <MovieBanner
                         movie={randomMovieQuery.data ?? null}
                         mode="home"
@@ -22,7 +23,7 @@ export const HomePage = () => {
                     ></MovieBanner>
                     <SectionLayout
                         title="Топ 10 фильмов"
-                        className="page-section--main">
+                        sectionName="top">
                         <Grid
                             items={topTenQuery.data ?? []}
                             className="movie"
@@ -33,13 +34,11 @@ export const HomePage = () => {
                                     title={item.title}
                                     imageUrl={item.backdropUrl}
                                 />
-                            )}
-                        >
+                            )}                        >
                         </Grid>
                     </SectionLayout>
-                </div>
+                </PageLayout>
             </PageBoundary>
-
         </>
     )
 }

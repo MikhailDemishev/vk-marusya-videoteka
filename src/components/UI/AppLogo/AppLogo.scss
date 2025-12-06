@@ -1,0 +1,19 @@
+    .app-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-left: 7px;
+
+        &__icon {
+            &--img {
+                width: 24px;
+                height: 32px;
+            }
+
+            &--text {
+                width: 100px;
+                height: 21px;
+            }
+        }
+
+    }

@@ -1,4 +1,4 @@
-import { ProfileSchema, type ProfileResponse } from "../auth/profile/profile.schemas";
+import { type ProfileResponse } from "../auth/profile/profile.schemas";
 import { apiRequest } from "../http";
 import { type Movie, MovieList } from "../movies/movies.schemas";
 
@@ -21,7 +21,6 @@ export function postFavorite(id: number | string) {
 
 export function deleteFavorite(id: number | string) {
     return apiRequest<ProfileResponse>({
-        schema: ProfileSchema,
         method: 'DELETE',
         url: `/favorites/${id}`,
 

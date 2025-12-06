@@ -1,6 +1,8 @@
 import type { FC } from "react";
-import { Loader } from "../../Loader/Loader";
+import { Loader } from "../../entities/Loader/Loader";
 import "./PageBoundary.scss";
+
+///wraps every page & checks load status. if loading-loader. error - error screen
 
 export interface IPageBoundaryProps {
     isLoading: boolean;

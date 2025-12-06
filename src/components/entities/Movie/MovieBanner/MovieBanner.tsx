@@ -1,13 +1,13 @@
-import type { Movie } from "../../../api/movies/movies.schemas";
-import { Button } from "../../UI/Button/Button";
+import type { Movie } from "../../../../api/movies/movies.schemas";
+import { Button } from "../../../UI/Button/Button";
 import type { FC } from "react";
-import { formatMinutes } from "../../../utils/formatMinutes";
-import { round } from "../../../utils/round";
+import { formatMinutes } from "../../../../utils/formatMinutes";
+import { round } from "../../../../utils/round";
 import sprite from '/src/assets/images/sprite/sprite.svg';
 import { Link } from "react-router-dom";
 import "./MovieBanner.scss";
-import { translatedGenres } from "../../../utils/translateGenres";
-import { useAddToFavorites } from "../../../features/favorites/hooks/useAddToFavorites";
+import { translatedGenres } from "../../../../utils/translateGenres";
+import { useAddToFavorites } from "../../../../features/favorites/hooks/useAddToFavorites";
 
 
 interface IMovieBanner {
@@ -69,7 +69,7 @@ export const MovieBanner: FC<IMovieBanner> = ({
                             {
                                 mode === "home" && (
                                     <>
-                                        <Link className="btn btn--primary btn--m movie-banner__button" to={`/movie/${movie!.id}`}>О фильме</Link>
+                                        <Link className="btn btn--primary btn--m movie-banner__button" to={`/movie/${movie!.id}`} preventScrollReset={true}>О фильме</Link>
                                         <Button
                                             className="movie-banner__button"
                                             size="s"

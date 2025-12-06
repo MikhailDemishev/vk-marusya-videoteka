@@ -3,7 +3,7 @@ import { registerUser } from "../../../api/auth/register/register.api";
 import { queryClient } from "../../../main";
 
 import { type RegisterResponse, type ValidateRegForm } from "../../../api/auth/register/register.schemas";
-import { useAppDispatch } from "../../../app/hooks";
+import { useAppDispatch } from "../../../app/hooks/reduxHooks";
 import { setAuthModalStatus } from "../model/authModalStatusSlice";
 
 export function useRegister() {

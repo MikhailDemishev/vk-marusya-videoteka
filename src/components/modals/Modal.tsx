@@ -1,7 +1,7 @@
 import "./Modal.scss";
 import type { FC, ReactNode } from "react";
 import sprite from "/src/assets/images/sprite/sprite.svg";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks/reduxHooks";
 import { closeModal, selectModalType } from "../../features/modal/modalOpenCloseSlice";
 import { Button } from "../UI/Button/Button";
 import { setAuthModalStatus } from "../../features/auth/model/authModalStatusSlice";

@@ -1,12 +1,12 @@
-import { CustomInput } from "../../../../components/UI/Input/Input";
-import { Button } from "../../../../components/UI/Button/Button";
-import { useForm } from "react-hook-form";
-import { RegisterValidateSchema, type ValidateRegForm } from "../../../../api/auth/register/register.schemas";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useRegister } from "../../hooks/useRegister";
-import { FormField } from "../../../../components/UI/FormField/FormField";
-import { AUTH_UI } from "../../model/authConfig";
 
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useRegister } from "../../../../features/auth/hooks/useRegister";
+import { AUTH_UI } from "../../../../features/auth/model/authConfig";
+import { RegisterValidateSchema, type ValidateRegForm } from "../../../../api/auth/register/register.schemas";
+import { FormField } from "../../../UI/FormField/FormField";
+import { CustomInput } from "../../../UI/Input/Input";
+import { Button } from "../../../UI/Button/Button";
 import "./RegisterForm.scss";
 
 export const RegisterForm = (

@@ -1,7 +1,7 @@
 import { ModalElement } from "../components/modals/Modal"
-import { AuthForm } from "../features/auth/ui/AuthForm/AuthCard"
+import { AuthCard } from "../components/entities/Auth/AuthForm/AuthCard"
 import { selectIsOpen, selectModalType } from "../features/modal/modalOpenCloseSlice"
-import { useAppSelector } from "./hooks"
+import { useAppSelector } from "./hooks/reduxHooks"
 
 export const ModalManager = () => {
     const modalIsOpen = useAppSelector(selectIsOpen)
@@ -11,7 +11,7 @@ export const ModalManager = () => {
     if (modalType === "auth") {
         return (
             <ModalElement>
-                <AuthForm />
+                <AuthCard />
             </ModalElement>
         )
     }

@@ -1,0 +1,75 @@
+.profile-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    &__fields {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &__field {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        &-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-white-50)
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+
+        &-icon {
+            width: 22px;
+            height: 18px;
+            fill: var(--color-white);
+        }
+
+        &-initials {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        &-label {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+
+            &--name {
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+
+
+    }
+
+    &__btn {
+        width: max-content;
+
+    }
+
+
+
+
+
+
+
+
+
+
+}

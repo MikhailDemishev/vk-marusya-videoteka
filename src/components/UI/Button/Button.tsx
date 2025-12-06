@@ -1,10 +1,9 @@
-import type { FC, HTMLAttributes } from "react";
+import type { ButtonHTMLAttributes, FC, } from "react";
 import "./Button.scss";
 import sprite from "/src/assets/images/sprite/sprite.svg";
 
 
-interface IButtonProps extends HTMLAttributes<HTMLButtonElement> {
-    isLoading?: boolean;
+interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     isDisabled?: boolean;
     type?: "submit" | "reset" | "button";
     variant?: "primary" | "secondary" | "menu" | "link" | "close";
@@ -12,36 +11,37 @@ interface IButtonProps extends HTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: FC<IButtonProps> = ({
-    isLoading,
-    isDisabled = isLoading,
     className = "",
     type = "button",
     variant = "primary",
     size,
     children,
+    disabled,
     ...props
 }) => {
     const classes = [
         "btn",
         `btn--${variant}`,
         size && `btn--${size}`,
+        disabled && "btn--disabled",
         className,
-    ].filter(Boolean).join(" ");
+    ]
+        .filter(Boolean)
+        .join(" ");
+
     const content =
         variant === "close" ? (
-            <svg className="close-btn__icon" width="19" height="19" aria-hidden="true">
+            <svg className="btn__icon" aria-hidden="true">
                 <use href={`${sprite}#icon-close`} xlinkHref={`${sprite}#icon-close`} />
             </svg>
-        ) : isLoading ? (
-            "Loading…"
         ) : (
             children
         );
 
     return (
         <button
-            disabled={isDisabled}
             type={type}
+            disabled={disabled}
             className={classes.trim()}
             {...props}
         >

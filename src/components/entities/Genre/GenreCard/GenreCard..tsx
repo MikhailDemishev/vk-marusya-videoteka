@@ -13,7 +13,7 @@ interface IGenreCard {
 export const GenreCard: FC<IGenreCard> = ({ genre, to, imgSource, }) => {
 
     return (
-        <Link to={to} className="genre-card">
+        <Link to={to} className="genre-card" preventScrollReset={true}>
             <img className="genre-card__img" src={imgSource} alt={`Жанр: ${genre}`} />
             <div className="genre-card__inner">
                 <span className="genre-card__genre">{genre}</span>

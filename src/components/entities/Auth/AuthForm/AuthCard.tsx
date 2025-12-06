@@ -1,19 +1,16 @@
-import { Button } from "../../../../components/UI/Button/Button";
-import { AUTH_UI } from "../../model/authConfig";
+import { AUTH_UI } from "../../../../features/auth/model/authConfig";
+import { Button } from "../../../UI/Button/Button";
+import { selectAuthModalStatus, setAuthModalStatus } from "../../../../features/auth/model/authModalStatusSlice";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks/reduxHooks";
+
 import "./AuthCard.scss";
-import { selectAuthModalStatus, setAuthModalStatus } from "../../model/authModalStatusSlice";
-import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 
 
 
-export const AuthForm = () => {
+export const AuthCard = () => {
     const dispatch = useAppDispatch();
     const authType = useAppSelector(selectAuthModalStatus)
-    console.log(authType);
     const handleAuthSwitch = () => dispatch(setAuthModalStatus(AUTH_UI[authType].switchTo))
-
-
-
     const Form = AUTH_UI[authType].form;
 
     return (
