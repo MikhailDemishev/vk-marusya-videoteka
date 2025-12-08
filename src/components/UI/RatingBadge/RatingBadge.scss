@@ -1,0 +1,21 @@
+.rating {
+    padding: 4px 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--color-white);
+    background-color: var(--color-temper-green);
+    border-radius: 16px;
+
+    &__logo {
+        width: 16px;
+        height: 16px;
+    }
+
+    &__value {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+    }
+}

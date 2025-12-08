@@ -1,0 +1,49 @@
+.movie-banner {
+  display: flex;
+  flex-direction: column;
+  padding-top: 32px;
+}
+.movie-banner__content {
+  display: flex;
+}
+.movie-banner__inner {
+  max-width: 600px;
+  min-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.movie-banner__about {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.movie-banner__title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  color: var(--color-white);
+  margin: 0;
+}
+.movie-banner__description {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--color-white-70);
+  margin: 0;
+}
+.movie-banner__actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.movie-banner__image {
+  max-width: 680px;
+  min-width: 280px;
+  max-height: 552px;
+  aspect-ratio: 680/552;
+}
+.movie-banner__button--added .movie-banner__logo-image {
+  color: var(--color-winterspring-lilac);
+  fill: var(--color-winterspring-lilac);
+}/*# sourceMappingURL=MovieBanner.css.map */

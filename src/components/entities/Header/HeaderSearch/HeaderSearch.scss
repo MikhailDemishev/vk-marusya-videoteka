@@ -1,0 +1,15 @@
+.header-search {
+    position: relative;
+    z-index: 10;
+
+    &__dropdown {
+        border-radius: 8px;
+        width: 559px;
+        background-color: var(--color-iridium);
+        padding: 16px;
+        top: calc(100% + 12px);
+        right: 0;
+
+
+    }
+}

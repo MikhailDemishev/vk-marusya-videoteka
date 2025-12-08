@@ -1,0 +1,27 @@
+.genre-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-raven);
+  border-radius: 24px;
+  height: 100%;
+}
+.genre-card__img {
+  width: 100%;
+  height: 220px;
+  border-radius: 24px 24px 0 0;
+  -o-object-position: top;
+     object-position: top;
+}
+.genre-card__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-items: center;
+  padding: 22px 30px 30px;
+}
+.genre-card__genre {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+}/*# sourceMappingURL=GenreCard.css.map */

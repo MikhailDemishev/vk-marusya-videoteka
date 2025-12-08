@@ -10,6 +10,19 @@
   font-size: 18px;
   line-height: 24px;
   outline: none;
+  flex: 1;
+  width: 100%;
+}
+.custom-input__reset {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .custom-input--search {
@@ -23,6 +36,11 @@
   width: 20px;
   height: 20px;
   color: var(--color-translucent);
+  flex-shrink: 0;
+}
+.custom-input--search .custom-input__icon--reset {
+  width: 13px;
+  height: 13px;
 }
 
 .custom-input--auth {

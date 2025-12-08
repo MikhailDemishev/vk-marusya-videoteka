@@ -1,13 +1,12 @@
 import type { Movie } from "../../../../api/movies/movies.schemas";
 import { Button } from "../../../UI/Button/Button";
 import type { FC } from "react";
-import { formatMinutes } from "../../../../utils/formatMinutes";
-import { round } from "../../../../utils/round";
 import sprite from '/src/assets/images/sprite/sprite.svg';
+import placeholder from "/src/assets/images/placeholders/clapperboard-placeholder.jpg";
 import { Link } from "react-router-dom";
-import "./MovieBanner.scss";
-import { translatedGenres } from "../../../../utils/translateGenres";
 import { useAddToFavorites } from "../../../../features/favorites/hooks/useAddToFavorites";
+import { MetaBlock } from "../../../UI/MetaBlock/MetaBlock";
+import "./MovieBanner.scss";
 
 
 interface IMovieBanner {
@@ -27,7 +26,6 @@ export const MovieBanner: FC<IMovieBanner> = ({
     }
 
 
-    const genresToRender = translatedGenres(movie!.genres)
     const { handleAddToFavorites, filmInFavorites } = useAddToFavorites()
 
     return (
@@ -36,20 +34,10 @@ export const MovieBanner: FC<IMovieBanner> = ({
                 <div className="movie-banner__content">
                     <div className="movie-banner__inner">
                         <div className="movie-banner__about">
-                            <div className="movie-banner__meta">
-                                <span className="movie-banner__rating movie-banner-rating">
-                                    <svg className="movie-banner-rating__logo-image" width="16" height="16" aria-hidden="true">
-                                        <use
-                                            href={`${sprite}#star`} xlinkHref={`${sprite}#star`}
-                                        />
-                                    </svg>
-                                    <span className="movie-banner-rating__value">{round(movie!.tmdbRating)}</span>
-                                </span>
-                                <span className="movie-banner__year">{movie!.releaseYear}</span>
-                                <span className="movie-banner__genre">{genresToRender}</span>
-                                <span className="movie-banner__duration">{formatMinutes(movie!.runtime)}</span>
-                            </div>
-                            <h1 className="movie-banner__title">{movie!.title}</h1>
+                            {movie && (
+                                <MetaBlock movie={movie} className="movie-banner__meta" />)}
+
+                            <h2 className="movie-banner__title">{movie!.title}</h2>
                             <p className="movie-banner__description">{movie!.plot}</p>
 
                         </div>
@@ -83,7 +71,7 @@ export const MovieBanner: FC<IMovieBanner> = ({
                             }
                         </div>
                     </div>
-                    <img className="movie-banner__image" src={movie!.posterUrl || ""} width="680" height="552" alt={movie!.title} />
+                    <img className="movie-banner__image" src={movie!.posterUrl || placeholder} width="680" height="552" alt={movie!.title} />
                 </div>
             </div>
         </>

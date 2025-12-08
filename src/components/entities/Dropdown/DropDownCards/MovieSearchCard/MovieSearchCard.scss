@@ -1,0 +1,55 @@
+.moviesearch-card {
+    padding: 20px 8px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+
+    &-img__wrapper {
+        width: 40px;
+        height: 52px;
+        flex-shrink: 0;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+
+    }
+
+    & meta {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    & .rating {
+        padding: 2px 8px;
+
+
+    }
+
+    & .rating__logo {
+        width: 10px;
+        height: 9px;
+    }
+
+    & .rating__value {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+
+}

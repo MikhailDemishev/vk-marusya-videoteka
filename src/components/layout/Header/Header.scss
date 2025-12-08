@@ -8,15 +8,38 @@
     }
 
 
-    &__center {
+    &__controls {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        gap: 80px;
+        flex: 1;
+    }
+
+    &__primary {
+        display: flex;
+        align-items: center;
         gap: 40px;
+        flex: 1;
     }
 
-    &__custom-input {
-        min-width: 655px;
+
+
+    &__search {
+        flex: 1;
+        max-width: 656px;
     }
 
+    &__btn,
+    &__nav {
+        flex-shrink: 0;
+    }
+
+
+
+}
+
+.header__controls,
+.header__primary,
+.header__search {
+    min-width: 0;
 }

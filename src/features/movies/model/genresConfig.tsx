@@ -1,88 +1,82 @@
 export const GENRE_CONFIG = {
     history: {
-        name: "История",
+        name: "история",
         image: "/src/assets/images/genres/history.jpg",
     },
     horror: {
-        name: "Ужасы",
+        name: "ужасы",
         image: "/src/assets/images/genres/horror.jpg",
     },
     scifi: {
-        name: "Научная фантастика",
+        name: "научная фантастика",
         image: "/src/assets/images/genres/scifi.jpg",
     },
     "stand-up": {
-        name: "Стендап",
+        name: "стендап",
         image: "/src/assets/images/genres/stand-up.jpg",
     },
-    //drama
     fantasy: {
-        name: "Фэнтези",
+        name: "фэнтези",
         image: "/src/assets/images/genres/fantasy.jpg",
     },
-    //drama
     drama: {
-        name: "Драма",
+        name: "драма",
         image: "/src/assets/images/genres/drama.jpg",
     },
     mystery: {
-        name: "Детектив / Мистика",
+        name: "детектив / мистика",
         image: "/src/assets/images/genres/mystery.jpg",
     },
     family: {
-        name: "Семейный",
+        name: "семейный",
         image: "/src/assets/images/genres/family.jpg",
     },
-    //done
     comedy: {
-        name: "Комедия",
+        name: "комедия",
         image: "/src/assets/images/genres/comedy.jpg",
     },
     romance: {
-        name: "Романтика",
+        name: "романтика",
         image: "/src/assets/images/genres/romance.jpg",
     },
     music: {
-        name: "Музыкальный",
+        name: "музыкальный",
         image: "/src/assets/images/genres/music.jpg",
     },
     crime: {
-        name: "Криминал",
+        name: "криминал",
         image: "/src/assets/images/genres/crime.jpg",
     },
     "tv-movie": {
-        name: "Телефильм",
+        name: "телефильм",
         image: "/src/assets/images/genres/tv-movie.jpg",
     },
-    //done
     documentary: {
-        name: "Документальный",
+        name: "документальный",
         image: "/src/assets/images/genres/documentary.jpg",
     },
-    //done
     action: {
-        name: "Боевик",
+        name: "боевик",
         image: "/src/assets/images/genres/action.jpg",
     },
     thriller: {
-        name: "Триллер",
+        name: "триллер",
         image: "/src/assets/images/genres/thriller.jpg",
     },
     western: {
-        name: "Вестерн",
+        name: "вестерн",
         image: "/src/assets/images/genres/western.jpg",
     },
     animation: {
-        name: "Анимация",
+        name: "анимация",
         image: "/src/assets/images/genres/animation.jpg",
     },
-    //done
     war: {
-        name: "Военный",
+        name: "военный",
         image: "/src/assets/images/genres/war.jpg",
     },
     adventure: {
-        name: "Приключения",
+        name: "приключения",
         image: "/src/assets/images/genres/adventure.jpg",
     },
 } as const;

@@ -15,34 +15,6 @@
         gap: 60px;
     }
 
-    &__meta {
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        font-family: Play;
-        font-size: 18px;
-        line-height: 24px;
-        color: var(--color-white-70);
-    }
-
-    &-rating {
-        padding: 4px 12px;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        color: var(--color-white);
-        background-color: var(--color-temper-green);
-        border-radius: 16px;
-
-        &__value {
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 24px;
-
-        }
-    }
-
     &__about {
         display: flex;
         flex-direction: column;
@@ -75,7 +47,7 @@
 
     &__image {
         max-width: 680px;
-        min-width: 408px;
+        min-width: 280px;
         max-height: 552px;
         aspect-ratio: 680 / 552;
     }
@@ -84,7 +56,7 @@
         &--added {
             .movie-banner__logo-image {
                 color: var(--color-winterspring-lilac);
-                fill: var(--color-winterspring-lilac) !important;
+                fill: var(--color-winterspring-lilac);
             }
         }
     }

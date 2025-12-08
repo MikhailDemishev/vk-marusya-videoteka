@@ -1,0 +1,53 @@
+.profile-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.profile-settings__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.profile-settings__field {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.profile-settings__field-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-white-50);
+}
+.profile-settings__field-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.profile-settings__field-icon {
+  width: 22px;
+  height: 18px;
+  fill: var(--color-white);
+}
+.profile-settings__field-initials {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+.profile-settings__field-label {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+.profile-settings__field-label--name {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+.profile-settings__btn {
+  width: -moz-max-content;
+  width: max-content;
+}/*# sourceMappingURL=ProfileSettings.css.map */

@@ -1,8 +1,9 @@
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
 import { modalOpenCloseSlice } from "../features/modal/modalOpenCloseSlice";
 import { authModalStatusSlice } from "../features/auth/model/authModalStatusSlice";
+import { dropDownOpenCloseSlice } from "../features/dropdown/dropdownOpenCloseSlice";
 
-const rootReducer = combineSlices(modalOpenCloseSlice, authModalStatusSlice)
+const rootReducer = combineSlices(modalOpenCloseSlice, authModalStatusSlice, dropDownOpenCloseSlice)
 export type RootState = ReturnType<typeof rootReducer>
 
 export const store = configureStore({

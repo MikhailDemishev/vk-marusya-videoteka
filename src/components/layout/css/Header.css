@@ -6,19 +6,28 @@
   align-items: center;
   gap: 80px;
 }
-.header-logo__link {
-  padding-left: 7px;
+.header__controls {
   display: flex;
-  gap: 12px;
   align-items: center;
-  justify-content: center;
+  gap: 80px;
+  flex: 1;
 }
-.header__center {
+.header__primary {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 40px;
+  flex: 1;
 }
-.header__custom-input {
-  min-width: 655px;
+.header__search {
+  flex: 1;
+  max-width: 656px;
+}
+.header__btn, .header__nav {
+  flex-shrink: 0;
+}
+
+.header__controls,
+.header__primary,
+.header__search {
+  min-width: 0;
 }/*# sourceMappingURL=Header.css.map */

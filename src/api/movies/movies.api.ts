@@ -40,3 +40,11 @@ export function getMoviesByGenre(genre: GenreKey, page = 1, count = 15) {
         params: { genre, page, count }
     })
 }
+
+export function getMoviesByTitle(title: string, count = 5) {
+    return apiRequest<Movie[]>({
+        schema: MovieList,
+        url: "/movie",
+        params: { title, count }
+    })
+}
