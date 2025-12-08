@@ -1,17 +1,19 @@
 import { useShowSearchResults } from "../../../../features/search/hooks/useShowSearchResults";
 import { CustomInput } from "../../../UI/Input/Input";
-import { DropDownWindow } from "../../Dropdown/DropdownWindow/DropDownWindow";
+import { MemoizedDropDownWindow } from "../../Dropdown/DropdownWindow/DropDownWindow";
 import { DropDownList } from "../../Dropdown/DropDownList/DropDownList";
 import "./HeaderSearch.scss";
 import { MovieSearchCard } from "../../Dropdown/DropDownCards/MovieSearchCard/MovieSearchCard";
 
+
 export const HeaderSearch = () => {
+
 
     const { handleInput,
         foundMovies,
         resetSearch,
         searchQuery,
-        dropDownState
+        dropDownState,
     } = useShowSearchResults()
 
     return (
@@ -28,18 +30,14 @@ export const HeaderSearch = () => {
                 onReset={resetSearch}
                 value={searchQuery}
             />
-            <DropDownWindow className="header-search" isOpen={Boolean(dropDownState &&
-                searchQuery.trim().length > 0 &&
-                foundMovies &&
-                foundMovies.length > 0)
-            }>
+            <MemoizedDropDownWindow className="header-search" isOpen={dropDownState}>
                 <DropDownList
                     items={foundMovies ?? []}
                     renderItem={(movie) => (
-                        <MovieSearchCard movie={movie} />
+                        <MovieSearchCard movie={movie} onClick={resetSearch} />
                     )}>
                 </DropDownList>
-            </DropDownWindow>
+            </MemoizedDropDownWindow>
         </div>
     )
 }

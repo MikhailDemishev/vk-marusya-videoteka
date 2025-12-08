@@ -1,5 +1,6 @@
 import type { FC } from "react";
 import "./DropDownWindow.scss";
+import React from "react";
 
 interface IDropdownWindow {
     isOpen: boolean;
@@ -7,7 +8,7 @@ interface IDropdownWindow {
     className: string;
 }
 
-export const DropDownWindow: FC<IDropdownWindow> = ({ isOpen, children, className }) => {
+const DropDownWindow: FC<IDropdownWindow> = ({ isOpen, children, className }) => {
     if (!isOpen) return null;
 
     return (
@@ -16,3 +17,5 @@ export const DropDownWindow: FC<IDropdownWindow> = ({ isOpen, children, classNam
         </div>
     );
 };
+
+export const MemoizedDropDownWindow = React.memo(DropDownWindow)

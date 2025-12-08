@@ -10,5 +10,6 @@ export function useMoviesByTitle(
         queryKey: ["moviesByTitle", title, count],
         queryFn: () => getMoviesByTitle(title, count),
         retry: false,
+        placeholderData: (prev) => prev,
     });
 }
