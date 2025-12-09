@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, FC, } from "react";
-import "./Button.scss";
 import sprite from "/src/assets/images/sprite/sprite.svg";
+import "./Button.scss";
 
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

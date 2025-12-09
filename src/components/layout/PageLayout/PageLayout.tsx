@@ -6,7 +6,6 @@ interface IPageProps {
     children: ReactNode;
     pageName: string;
     title?: string;
-
 }
 
 

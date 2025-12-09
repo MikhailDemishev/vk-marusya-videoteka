@@ -12,6 +12,7 @@
         outline: none;
         flex: 1;
         width: 100%;
+        padding: 0;
     }
 
     &__reset {
@@ -49,13 +50,10 @@
 
 }
 
-
-
-
 .custom-input--auth {
     background-color: var(--color-white);
     border: 1px solid var(--color-black-40);
-    padding: 16px;
+    padding: 14px 16px;
     gap: 12px;
 
     .custom-input__field {

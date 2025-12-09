@@ -1,6 +1,33 @@
 .auth-card {
     display: flex;
     flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    width: 420px;
+    border-radius: 24px;
+    padding: 64px 40px 48px;
+
+    & .app-logo {
+        margin-bottom: 32px;
+        padding: 0;
+        flex-shrink: 0;
+
+        &__icon {
+            &--img {
+                width: 23px;
+                height: 30px;
+                overflow: visible;
+            }
+
+            &--text {
+                width: 92px;
+                height: 20px;
+                overflow: visible;
+            }
+        }
+    }
 
     &__title {
         font-weight: 700;
@@ -8,27 +35,35 @@
         line-height: 32px;
         margin: 0;
         text-align: center;
-        margin: 0 0 24px;
+        margin: 0 0 16px;
 
         &:empty {
             display: none;
         }
-
     }
-
 
     &__success-message {
         font-weight: 400;
         font-size: 18px;
         line-height: 24px;
         text-align: center;
-
-        form {
-            margin: 0 0 8px;
-        }
-
-
-
-
     }
+
+    &__btn {
+        width: 100%;
+    }
+
+
+    & form {
+        width: 100%;
+    }
+
+    & form label:last-of-type .custom-input {
+        margin-bottom: 16px;
+    }
+
+    & form button {
+        width: 100%;
+    }
+
 }

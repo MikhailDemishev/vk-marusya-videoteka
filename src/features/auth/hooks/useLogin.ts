@@ -3,7 +3,7 @@ import { loginUser } from "../../../api/auth/login/login.api";
 import { type LoginType } from "../../../api/auth/login/login.schemas";
 import { queryClient } from "../../../main";
 import { useAppDispatch } from "../../../app/hooks/reduxHooks";
-import { closeModal } from "../../modal/modalOpenCloseSlice";
+import { closeModal } from "../../modal/model/modalOpenCloseSlice";
 
 
 export function useLogin() {

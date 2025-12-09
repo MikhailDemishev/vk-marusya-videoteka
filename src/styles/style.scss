@@ -1,7 +1,7 @@
-@use "./normalize";
-@use "./variables";
-@use "./mixins";
-@use "./fonts";
-@use "./reboot";
-@use "./container";
-@use "./visually-hidden";
+@use "./normalize" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./fonts" as *;
+@use "./reboot" as *;
+@use "./container" as *;
+@use "./visually-hidden" as *;

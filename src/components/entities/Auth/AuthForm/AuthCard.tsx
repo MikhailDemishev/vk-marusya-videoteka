@@ -2,10 +2,9 @@ import { AUTH_UI } from "../../../../features/auth/model/authConfig";
 import { Button } from "../../../UI/Button/Button";
 import { selectAuthModalStatus, setAuthModalStatus } from "../../../../features/auth/model/authModalStatusSlice";
 import { useAppDispatch, useAppSelector } from "../../../../app/hooks/reduxHooks";
+import { AppLogo } from "../../../UI/AppLogo/AppLogo";
 
 import "./AuthCard.scss";
-
-
 
 export const AuthCard = () => {
     const dispatch = useAppDispatch();
@@ -15,6 +14,7 @@ export const AuthCard = () => {
 
     return (
         <div className="auth-card">
+            <AppLogo className="auth-card" />
             <p className="auth-card__title">{AUTH_UI[authType].title}</p>
             {authType === "success" && (
                 <p className="auth-card__success-message">Используйте вашу электронную почту для входа</p>

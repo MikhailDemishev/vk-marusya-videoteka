@@ -33,13 +33,9 @@ export const RegisterForm = (
             <form
                 className="register-form"
                 onSubmit={handleSubmit((values) => {
-                    //убрать
-                    console.log('Отправка формы:', values);
                     registerMutation.mutate(values, {
                         onSuccess: () => {
                             reset();
-                            //убрать
-                            console.log("form cleared");
                         }
                     });
                 })}>

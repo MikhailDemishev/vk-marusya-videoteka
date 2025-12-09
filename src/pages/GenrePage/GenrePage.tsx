@@ -33,7 +33,7 @@ export const GenrePage = () => {
                     </Grid>
                     {
                         hasMore && (
-                            <Button size="m" className="genre__btn" onClick={loadMore} >Показать еще</Button>
+                            <Button size="m" className="genre-section__btn" onClick={loadMore} >Показать еще</Button>
                         )
                     }
 

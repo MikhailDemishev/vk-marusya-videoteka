@@ -21,7 +21,6 @@ export const FormField: FC<IFormFieldProps> = ({
   return (
     <>
       <label className={classes.trim()}>
-        <span className="form-field__label"></span>
         {children}
         {errorMessage && (
           <span className="form-field__error-text">{errorMessage}</span>

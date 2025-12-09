@@ -7,8 +7,6 @@ import { useParams } from "react-router-dom";
 import { PageLayout } from "../../components/layout/PageLayout/PageLayout";
 import "./MoviePage.scss";
 
-
-
 export const MoviePage = () => {
     const { id } = useParams<{ id: string }>()
     const movieByIdQuery = useMovieById(id ?? "")
@@ -26,8 +24,6 @@ export const MoviePage = () => {
                     <MovieInfo movie={movieByIdQuery.data ?? null}></MovieInfo>
                 </SectionLayout>
             </PageLayout>
-
-
         </PageBoundary>
     )
 }

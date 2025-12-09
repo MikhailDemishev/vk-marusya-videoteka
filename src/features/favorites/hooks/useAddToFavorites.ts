@@ -1,9 +1,9 @@
-import { useAuthModalActions } from "../../auth/hooks/useAuthModal";
+import { useAuthModal } from "../../auth/hooks/useAuthModal";
 import { useUserProfile } from "../../auth/hooks/useProfile";
 import { usePostFavorite } from "./usePostFavorite";
 
 export const useAddToFavorites = () => {
-    const { handleOpenAuthModal } = useAuthModalActions();
+    const { handleLogin } = useAuthModal();
     const { data: profile } = useUserProfile();
     const postFavorite = usePostFavorite()
 
@@ -14,7 +14,7 @@ export const useAddToFavorites = () => {
 
     const handleAddToFavorites = (id: number | string) => {
         if (!profile) {
-            handleOpenAuthModal();
+            handleLogin();
             return;
         }
 

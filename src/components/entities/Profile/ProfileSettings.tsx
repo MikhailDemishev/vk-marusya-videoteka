@@ -4,7 +4,7 @@ import { shortNameSurname } from "../../../utils/shortNameSurname";
 import sprite from '/src/assets/images/sprite/sprite.svg';
 import "./ProfileSettings.scss";
 import { Button } from "../../UI/Button/Button";
-import { useAuthModalActions } from "../../../features/auth/hooks/useAuthModal";
+import { useAuthModal } from "../../../features/auth/hooks/useAuthModal";
 
 
 interface IProfileSettings {
@@ -21,7 +21,7 @@ interface ProfileInfoItem {
 export const ProfileSettings: FC<IProfileSettings> = ({
     profile,
 }) => {
-    const { handleLogOut } = useAuthModalActions()
+    const { handleLogOut } = useAuthModal()
     const profileSettingConfig: ProfileInfoItem[] = [
         { labelName: "Имя Фамилия ", value: profile!.name + ' ' + profile!.surname, addParameter: shortNameSurname(profile!.name, profile!.surname), hasIcon: false },
         { labelName: "Электронная почта ", value: profile!.email, addParameter: 'icon-email', hasIcon: true },

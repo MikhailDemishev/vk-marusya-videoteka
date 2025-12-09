@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useAddToFavorites } from "../../../../features/favorites/hooks/useAddToFavorites";
 import { MetaBlock } from "../../../UI/MetaBlock/MetaBlock";
 import "./MovieBanner.scss";
+import { useTrailerModal } from "../../../../features/movies/hooks/useTrailerModal";
 
 
 interface IMovieBanner {
@@ -21,12 +22,10 @@ export const MovieBanner: FC<IMovieBanner> = ({
     refetch,
 }) => {
 
-    const testClick = () => {
-        console.log('здесь будет позже окно с трейлером');
-    }
-
-
     const { handleAddToFavorites, filmInFavorites } = useAddToFavorites()
+
+    const { handleTrailerOpen } = useTrailerModal()
+    console.log(movie);
 
     return (
         <>
@@ -45,7 +44,7 @@ export const MovieBanner: FC<IMovieBanner> = ({
                             <Button
                                 className="movie-banner__button"
                                 size="m"
-                                onClick={testClick}
+                                onClick={() => handleTrailerOpen(movie!.trailerUrl)}
                             >Трейлер</Button>
                             <Button className={filmInFavorites(movie!.id) ? "movie-banner__button--added" : "movie-banner__button"}
                                 size="s"

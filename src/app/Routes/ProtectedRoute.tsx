@@ -1,6 +1,6 @@
 import { type FC } from "react";
 import { useUserProfile } from "../../features/auth/hooks/useProfile";
-import { useAuthModalActions } from "../../features/auth/hooks/useAuthModal";
+import { useAuthModal } from "../../features/auth/hooks/useAuthModal";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +11,7 @@ export interface IIprotectedRoute {
 }
 
 export const ProtectedRoute: FC<IIprotectedRoute> = ({ children }) => {
-    const { handleOpenAuthModal } = useAuthModalActions()
+    const { handleLogin } = useAuthModal()
     const { data: profile, isPending, } = useUserProfile();
     const navigate = useNavigate();
 
@@ -20,10 +20,10 @@ export const ProtectedRoute: FC<IIprotectedRoute> = ({ children }) => {
     useEffect(() => {
         if (!isPending && !profile) {
             navigate("/");
-            handleOpenAuthModal();
+            handleLogin();
 
         }
-    }, [profile, handleOpenAuthModal, isPending, navigate]);
+    }, [profile, handleLogin, isPending, navigate]);
 
     if (isPending) {
         return null;

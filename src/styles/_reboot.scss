@@ -20,6 +20,16 @@ body {
 
 main {
   flex: 1;
+  position: relative;
+
+  position: relative;
+
+  & .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   // @include vp-768 {
   //   padding: 80px 0 0 0;
