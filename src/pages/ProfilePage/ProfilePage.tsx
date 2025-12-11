@@ -9,10 +9,10 @@ import { ProfileSettings } from "../../components/entities/Profile/ProfileSettin
 import { useGetFavorites } from "../../features/favorites/hooks/useGetFavorites";
 import { Grid } from "../../components/UI/Grid/Grid";
 import { MovieCard } from "../../components/entities/Movie/MovieCard/MovieCard";
-
+import { useDeleteFavorite } from "../../features/favorites/hooks/useDeleteFavorite";
 
 import "./ProfilePage.scss";
-import { useDeleteFavorite } from "../../features/favorites/hooks/useDeleteFavorite";
+
 
 export const ProfilePage = () => {
     const userProfile = useUserProfile();
@@ -39,20 +39,24 @@ export const ProfilePage = () => {
 
                     {activeTab === 'favorites' && (
                         <PageBoundary isLoading={favoritesList.isPending} isError={favoritesList.error}>
-                            <Grid
-                                items={favoritesList.data ?? []}
-                                className="movie"
-                                renderItem={(item) => (
-                                    <MovieCard
-                                        id={item.id}
-                                        title={item.title}
-                                        imageUrl={item.backdropUrl}
-                                        showCloseButton
-                                        onClick={() => deleteHandle.mutate(item.id)}
+                            <div className="profile-section__scroll">
+                                <div className="profile-section__scroll-wrapper">
+                                    <Grid
+                                        items={favoritesList.data ?? []}
+                                        className="movie"
+                                        renderItem={(item) => (
+                                            <MovieCard
+                                                id={item.id}
+                                                title={item.title}
+                                                imageUrl={item.backdropUrl}
+                                                showCloseButton
+                                                onClick={() => deleteHandle.mutate(item.id)}
 
-                                    />
-                                )}                        >
-                            </Grid>
+                                            />
+                                        )}                        >
+                                    </Grid>
+                                </div>
+                            </div>
                         </PageBoundary>
                     )}
                 </SectionLayout>

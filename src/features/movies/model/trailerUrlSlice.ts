@@ -1,31 +1,42 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-interface ITrailerUrl {
+interface ITrailerData {
     trailerUrl: string | null | undefined;
+    trailerDesc: string | null | undefined;
 }
 
-const initialState: ITrailerUrl = {
+const initialState: ITrailerData = {
     trailerUrl: null,
+    trailerDesc: null,
 };
 
-export const trailerUrlSlice = createSlice({
-    name: "trailerUrlSlice",
+export const trailerDataSlice = createSlice({
+    name: "trailerDataSlice",
     initialState,
     reducers: {
-        setTrailerUrl(state, action: PayloadAction<string | null | undefined>) {
-            state.trailerUrl = action.payload;
+        setTrailerData(
+            state,
+            action: PayloadAction<{ trailerUrl: string | null | undefined; trailerDesc: string | null | undefined }>
+        ) {
+            state.trailerUrl = action.payload.trailerUrl;
+            state.trailerDesc = action.payload.trailerDesc;
         },
-        resetTrailerUrl(state) {
+
+        resetTrailerData(state) {
             state.trailerUrl = null;
+            state.trailerDesc = null;
         },
     },
 
     selectors: {
         selectTrailerUrl: (state) => state.trailerUrl,
+        selectTrailerDesc: (state) => state.trailerDesc,
+        selectTrailerData: (state) => state,
     },
 });
 
-export const { setTrailerUrl, resetTrailerUrl } = trailerUrlSlice.actions;
-export const { selectTrailerUrl } = trailerUrlSlice.selectors;
+export const { setTrailerData, resetTrailerData } = trailerDataSlice.actions;
+export const { selectTrailerUrl, selectTrailerDesc, selectTrailerData } =
+    trailerDataSlice.selectors;
 
-export default trailerUrlSlice.reducer;
+export default trailerDataSlice.reducer;

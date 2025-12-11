@@ -20,7 +20,6 @@ export const modalOpenCloseSlice = createSlice({
         },
         closeModal(state) {
             state.isOpen = false;
-            state.type = null;
         },
     },
 

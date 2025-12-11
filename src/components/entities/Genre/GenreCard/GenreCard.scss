@@ -1,8 +1,10 @@
 .genre-card {
-    display: flex;
-    flex-direction: column;
     background-color: var(--color-raven);
     border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1 1 auto;
     height: 100%;
 
 
@@ -11,8 +13,6 @@
         height: 220px;
         border-radius: 24px 24px 0 0;
         object-position: top;
-
-
     }
 
     &__inner {
@@ -21,7 +21,7 @@
         align-items: flex-end;
         align-items: center;
         padding: 22px 30px 30px;
-
+        background-color: var(-color-raven);
     }
 
     &__genre {

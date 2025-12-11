@@ -5,7 +5,7 @@ export const profileTabs: ITab[] = [
         tabId: "favorites",
         label: "Избранные фильмы",
         labelMobile: "Избранное",
-        icon: "heart",
+        icon: "heart-empty",
         iconWidth: "24",
         iconHeight: "24",
         TabClassName: "profile-tab",

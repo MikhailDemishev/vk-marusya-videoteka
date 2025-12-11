@@ -6,8 +6,8 @@ import placeholder from "/src/assets/images/placeholders/clapperboard-placeholde
 import { Link } from "react-router-dom";
 import { useAddToFavorites } from "../../../../features/favorites/hooks/useAddToFavorites";
 import { MetaBlock } from "../../../UI/MetaBlock/MetaBlock";
-import "./MovieBanner.scss";
 import { useTrailerModal } from "../../../../features/movies/hooks/useTrailerModal";
+import "./MovieBanner.scss";
 
 
 interface IMovieBanner {
@@ -25,7 +25,28 @@ export const MovieBanner: FC<IMovieBanner> = ({
     const { handleAddToFavorites, filmInFavorites } = useAddToFavorites()
 
     const { handleTrailerOpen } = useTrailerModal()
-    console.log(movie);
+    console.log('banner', movie);
+
+    /*
+    ==================DEBUG==============
+    movie = {
+    id: 759872,
+    title: "The Farmer and the Belle: Saving Santaland",
+    originalTitle: "The Farmer and the Belle: Saving Santaland",
+    language: "en",
+    releaseYear: 2020,
+    backdropUrl: "https://cinemaguide.skillbox.cc/images/759872/qEBIJ2ZjyoteV2ACAh91IrowJfK.jpg",
+    posterUrl: "https://cinemaguide.skillbox.cc/images/759872/tOtzpBwxMz0pmX0hno123pW7qPf.jpg",
+    plot: "Sparks fly between a famous model and a farmer with a young daughter when she visits her childhood home. The town is in danger of losing their beloved Santaland festival, but miracles can happen with a little love, family, and faith.",
+    genres: ["family", "comedy", "romance"],
+    trailerUrl: "https://youtube.com/watch?v=-WJmjnou5Rs",
+    tmdbRating: 5.4,
+    runtime: 90,
+};
+
+    */
+
+
 
     return (
         <>
@@ -44,19 +65,32 @@ export const MovieBanner: FC<IMovieBanner> = ({
                             <Button
                                 className="movie-banner__button"
                                 size="m"
-                                onClick={() => handleTrailerOpen(movie!.trailerUrl)}
+                                onClick={() => handleTrailerOpen(movie!.trailerUrl, movie!.title)}
                             >Трейлер</Button>
+                            {
+                                mode === "home" && (
+                                    <>
+                                        <Link className="btn btn--primary btn--m movie-banner__button" to={`/movie/${movie!.id}`} preventScrollReset={true}>О фильме</Link>
+                                    </>
+                                )
+                            }
                             <Button className={filmInFavorites(movie!.id) ? "movie-banner__button--added" : "movie-banner__button"}
                                 size="s"
                                 onClick={() => handleAddToFavorites(movie!.id)}>
                                 <svg className="movie-banner__logo-image" width="20" height="19" aria-hidden="true">
-                                    <use href={`${sprite}#heart`} xlinkHref={`${sprite}#heart`} />
+                                    {
+                                        filmInFavorites(movie!.id) ? (
+                                            <use href={`${sprite}#heart-filled`} xlinkHref={`${sprite}#heart-filled`} />
+                                        ) : (
+                                            <use href={`${sprite}#heart-empty`} xlinkHref={`${sprite}#heart-empty`} />
+                                        )
+                                    }
+
                                 </svg>
                             </Button>
                             {
                                 mode === "home" && (
                                     <>
-                                        <Link className="btn btn--primary btn--m movie-banner__button" to={`/movie/${movie!.id}`} preventScrollReset={true}>О фильме</Link>
                                         <Button
                                             className="movie-banner__button"
                                             size="s"

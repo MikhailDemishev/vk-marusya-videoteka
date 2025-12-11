@@ -1,0 +1,22 @@
+.genre-section {
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__backlink {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    &__backlink-logo {
+        width: 13px;
+        height: 21px;
+        color: var(--color-white);
+    }
+}

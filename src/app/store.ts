@@ -2,9 +2,9 @@ import { combineSlices, configureStore } from "@reduxjs/toolkit";
 import { modalOpenCloseSlice } from "../features/modal/model/modalOpenCloseSlice";
 import { authModalStatusSlice } from "../features/auth/model/authModalStatusSlice";
 import { dropDownOpenCloseSlice } from "../features/dropdown/dropdownOpenCloseSlice";
-import { trailerUrlSlice } from "../features/movies/model/trailerUrlSlice";
+import { trailerDataSlice } from "../features/movies/model/trailerUrlSlice";
 
-const rootReducer = combineSlices(modalOpenCloseSlice, authModalStatusSlice, dropDownOpenCloseSlice, trailerUrlSlice)
+const rootReducer = combineSlices(modalOpenCloseSlice, authModalStatusSlice, dropDownOpenCloseSlice, trailerDataSlice)
 export type RootState = ReturnType<typeof rootReducer>
 
 export const store = configureStore({

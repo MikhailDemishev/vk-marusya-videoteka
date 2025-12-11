@@ -1,4 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-arrow" viewBox="0 0 13 22" xmlns="http://www.w3.org/2000/svg">
+            <path
+                  d="M4.714 10.6066L12.9637 18.8561L10.6067 21.2131L0 10.6066L10.6067 0L12.9637 2.35702L4.714 10.6066Z"
+                  fill="currentColor" />
+      </symbol>
       <symbol id="marusya-symbol" width="25" height="32" viewBox="0 0 25 32" fill="none"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -97,4 +102,6 @@
                   d="M25.6067 4.3934L23.2495 6.75042C21.1383 4.63917 18.2217 3.33333 15 3.33333C8.55668 3.33333 3.33333 8.55668 3.33333 15C3.33333 21.4433 8.55668 26.6667 15 26.6667C21.4433 26.6667 26.6667 21.4433 26.6667 15H30C30 23.2843 23.2843 30 15 30C6.71573 30 0 23.2843 0 15C0 6.71573 6.71573 0 15 0C19.1422 0 22.8922 1.67893 25.6067 4.3934Z"
                   fill="currentColor" />
       </symbol>
+
+
 </svg>

@@ -1,29 +1,81 @@
-.modal__overlay {
-    position: relative;
-    background-color: var(--color-black-50);
+.modal {
     position: fixed;
     inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 300;
-}
+    pointer-events: none;
+    transition: opacity var(--transition-300);
 
 
-.modal__wrapper {
-    position: absolute;
-}
+    &--open {
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 50;
 
-.modal {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 400;
+        & .modal__overlay {
+            opacity: 1;
+        }
+
+        & .modal__window {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    &--closed {
+        pointer-events: none;
+
+        .modal__overlay {
+            opacity: 0;
+        }
+
+        .modal__close-btn {
+            opacity: 0;
+        }
+
+        .modal__window {
+            transform: scale(0.96);
+            opacity: 0;
+        }
+    }
+
+    &--trailer .modal__overlay {
+        background-color: var(--color-graphite-900);
+    }
+
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-black-50);
+        opacity: 0;
+        transition: opacity var(--transition-300);
+        z-index: 51;
+    }
+
+
+    &__wrapper {
+        position: relative;
+        z-index: 52;
+    }
 
     &__close-btn {
+        position: absolute;
         top: 0;
         right: -24px;
         transform: translateX(100%);
+    }
+
+    &__window {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        transform: scale(0.96);
+        opacity: 0;
+        transition: transform var(--transition-300), opacity var(--transition-300);
+
     }
 }

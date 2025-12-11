@@ -14,7 +14,7 @@
             background-color: var(--color-flamingo);
             position: absolute;
             left: 0;
-            bottom: 0;
+            bottom: -8px;
             transform: scaleX(0);
             transform-origin: left;
             transition: transform var(--transition-300);

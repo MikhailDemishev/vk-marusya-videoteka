@@ -6,6 +6,7 @@
     justify-content: center;
     border: none;
     white-space: nowrap;
+    padding: 0;
 
     //variants
 
@@ -51,7 +52,7 @@
             background-color: var(--color-flamingo);
             position: absolute;
             left: 0;
-            bottom: 0;
+            bottom: -8px;
             transform-origin: left;
             transition: transform var(--transition-300);
             position: absolute;

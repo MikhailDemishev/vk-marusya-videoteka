@@ -9,6 +9,7 @@ import { Grid } from "../../components/UI/Grid/Grid";
 import "./GenrePage.scss";
 import { MovieCard } from "../../components/entities/Movie/MovieCard/MovieCard";
 import { PageLayout } from "../../components/layout/PageLayout/PageLayout";
+import { firstLetterTOUpperCase } from "../../utils/firstLetterTOUpperCase";
 
 export const GenrePage = () => {
     const { genre } = useParams()
@@ -18,7 +19,7 @@ export const GenrePage = () => {
     return (
         <PageBoundary isLoading={isPending} isError={error}>
             <PageLayout pageName="genre">
-                <SectionLayout sectionName="genre" title={translate1Genre(genre!)}>
+                <SectionLayout sectionName="genre" title={firstLetterTOUpperCase(translate1Genre(genre!))}>
                     <Grid
                         items={movies}
                         className="movie"

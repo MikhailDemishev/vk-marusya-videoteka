@@ -1,5 +1,7 @@
 import type { FC, ReactNode } from "react";
+import sprite from '/src/assets/images/sprite/sprite.svg';
 import "./PageSection.scss";
+import { Link } from "react-router-dom";
 
 
 interface IPageSectionProps {
@@ -13,7 +15,23 @@ interface IPageSectionProps {
 export const SectionLayout: FC<IPageSectionProps> = ({ children, title, sectionName, headerSlot }) => {
     return (
         <section className={`page-section ${sectionName}-section`}>
-            <h2 className={`${sectionName}-section__title`}>{title}</h2>
+            {
+                sectionName === 'genre' ? (
+                    <>
+                        <span className={`${sectionName}-section__header`}>
+                            <Link className={`${sectionName}-section__backlink`} to='/genres' preventScrollReset={true}>
+                                <svg className={`${sectionName}-section__backlink-logo`} aria-hidden="true">
+                                    <use href={`${sprite}#icon-arrow`} xlinkHref={`${sprite}#icon-arrow`} />
+                                </svg>
+                            </Link>
+
+                            <h2 className={`${sectionName}-section__title`}>{title}</h2>
+                        </span>
+                    </>
+                ) : (
+                    <h2 className={`${sectionName}-section__title`}>{title}</h2>
+                )
+            }
             {headerSlot && (
                 <div className={`${sectionName}-section__header`}>{headerSlot}</div>
             )}

@@ -13,7 +13,7 @@ export const AuthCard = () => {
     const Form = AUTH_UI[authType].form;
 
     return (
-        <div className="auth-card">
+        <div className={`auth-card ${authType === "success" ? "auth-card--success" : ""}`}>
             <AppLogo className="auth-card" />
             <p className="auth-card__title">{AUTH_UI[authType].title}</p>
             {authType === "success" && (
