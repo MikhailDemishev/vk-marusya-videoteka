@@ -9,6 +9,9 @@ import "./styles/style.scss";
 
 export const queryClient = new QueryClient();
 
+const savedTheme = localStorage.getItem("themeColor") ?? "dark";
+document.documentElement.setAttribute("data-theme", savedTheme);
+
 
 
 createRoot(document.getElementById('root')!).render(

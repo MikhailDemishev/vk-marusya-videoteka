@@ -8,6 +8,23 @@
     background-color: var(--color-temper-green);
     border-radius: 16px;
 
+    &--yellow {
+        background-color: var(--color-romaine-green);
+    }
+
+    &--green {
+        background-color: var(--color-temper-green);
+    }
+
+    &--grey {
+        background-color: var(--color-lucky-grey);
+    }
+
+    &--red {
+        background-color: var(--color-lionheart);
+    }
+
+
     &__logo {
         width: 16px;
         height: 16px;

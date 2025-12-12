@@ -3,8 +3,14 @@ import { modalOpenCloseSlice } from "../features/modal/model/modalOpenCloseSlice
 import { authModalStatusSlice } from "../features/auth/model/authModalStatusSlice";
 import { dropDownOpenCloseSlice } from "../features/dropdown/dropdownOpenCloseSlice";
 import { trailerDataSlice } from "../features/movies/model/trailerUrlSlice";
+import { themeSwitcherSlice } from "../features/theme/themeSwitcherslice";
 
-const rootReducer = combineSlices(modalOpenCloseSlice, authModalStatusSlice, dropDownOpenCloseSlice, trailerDataSlice)
+const rootReducer = combineSlices(
+    modalOpenCloseSlice,
+    authModalStatusSlice,
+    dropDownOpenCloseSlice,
+    trailerDataSlice,
+    themeSwitcherSlice)
 export type RootState = ReturnType<typeof rootReducer>
 
 export const store = configureStore({

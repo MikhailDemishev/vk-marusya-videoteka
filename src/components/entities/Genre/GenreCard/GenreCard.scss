@@ -1,11 +1,12 @@
 .genre-card {
-    background-color: var(--color-raven);
+    background-color: var(--color-genre-card);
     border-radius: 24px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     flex: 1 1 auto;
     height: 100%;
+    overflow: hidden;
 
 
     &__img {
@@ -21,7 +22,6 @@
         align-items: flex-end;
         align-items: center;
         padding: 22px 30px 30px;
-        background-color: var(-color-raven);
     }
 
     &__genre {

@@ -1,5 +1,7 @@
 import type { Movie } from "../../../../api/movies/movies.schemas";
 import type { FC } from "react";
+import { LANGUAGE_CONFIG } from "../../../../features/movies/model/languages.Config";
+import { firstLetterTOUpperCase } from "../../../../utils/firstLetterTOUpperCase";
 import "./MovieInfo.scss";
 
 
@@ -17,12 +19,16 @@ export const MovieInfo: FC<IMovieInfo> = ({
     movie,
 }) => {
     const infoConfig: InfoItem[] = [
-        { labelName: "Original language", value: movie?.language ?? 'unknown language' },
-        { labelName: "Budget", value: movie?.budget ?? 'unknown budget' },
-        { labelName: "Revenue", value: movie?.revenue ?? 'unknown revenue' },
-        { labelName: "Director", value: movie?.director ?? 'unknown director' },
-        { labelName: "Production", value: movie?.production ?? 'unknown production' },
-        { labelName: "awards", value: movie?.awardsSummary ?? 'no info about awards' },
+        {
+            labelName: "Язык оригинала", value:
+                firstLetterTOUpperCase(LANGUAGE_CONFIG[movie?.language as keyof typeof LANGUAGE_CONFIG]?.name) ??
+                "Язык неизвестен",
+        },
+        { labelName: "Бюджет", value: movie?.budget ?? 'Бюджет неизвестнен' },
+        { labelName: "Выручка", value: movie?.revenue ?? 'Нет данных о выручке' },
+        { labelName: "Режиссёр", value: movie?.director ?? 'Неизвестный режиссер' },
+        { labelName: "Продакшен", value: movie?.production ?? 'Нет информции о продакшне' },
+        { labelName: "Награды", value: movie?.awardsSummary ?? 'Нет информации о наградах' },
     ];
 
     return (

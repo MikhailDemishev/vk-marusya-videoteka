@@ -1,0 +1,14 @@
+.theme-switcher {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__logo {
+        color: var(--color-svg-main);
+        fill: var(--color-svg-main);
+
+    }
+}

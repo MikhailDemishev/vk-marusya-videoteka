@@ -14,10 +14,7 @@
     &__icon {
         width: 100%;
         height: 100%;
-        animation: spin 1.50s linear infinite;
+        animation: spin var(--spin-1500);
         transform-origin: center;
     }
-
-
-
 }

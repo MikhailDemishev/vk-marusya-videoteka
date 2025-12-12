@@ -28,18 +28,22 @@
     }
 }
 
+
 .custom-input--search {
-    background-color: var(--color-iridium);
+    background-color: var(--color-input-search-background);
+    border: 1px solid var(--color-input-border);
+
+
 
     .custom-input__field {
-        background-color: var(--color-iridium);
-        color: var(--color-translucent);
+        background-color: var(--color-input-search-background);
+        color: var(--color-input-search);
     }
 
     .custom-input__icon {
         width: 20px;
         height: 20px;
-        color: var(--color-translucent);
+        color: var(--color-input-search);
         flex-shrink: 0;
 
         &--reset {
@@ -47,23 +51,56 @@
             height: 13px;
         }
     }
-
 }
 
 .custom-input--auth {
-    background-color: var(--color-white);
-    border: 1px solid var(--color-black-40);
+    transition: border-color var(--transition-300);
+
+    .custom-input__field:-webkit-autofill {
+        box-shadow: 0 0 0 1000px var(--color-auth-input-background) inset !important;
+        -webkit-text-fill-color: var(--color-auth-input-text) !important;
+    }
+
+
+    background-color: var(--color-auth-input-background);
+    border: 1px solid var(--color-auth-input-border);
     padding: 15px 16px;
     gap: 12px;
 
-    .custom-input__field {
-        background-color: var(--color-white);
-        color: var(--color-black-40);
+    &:hover,
+    &:focus-within {
+        border-color: var(--color-winterspring-lilac);
+
+        & .custom-input__icon {
+            color: var(--color-winterspring-lilac) !important;
+        }
+
     }
 
-    .custom-input__icon {
-        color: var(--color-black-40);
+    .custom-input__field {
+        background-color: var(--color-auth-input-background);
+        color: var(--color-auth-input-text);
+
+        &::placeholder {
+            color: var(--color-auth-input-placeholder);
+        }
+
     }
+
+
+    &:has(.custom-input__field:placeholder-shown) .custom-input__icon {
+        color: var(--color-auth-input-placeholder);
+    }
+
+    &:has(.custom-input__field:not(:placeholder-shown)) .custom-input__icon {
+        color: var(--color-auth-input-text);
+    }
+
+    & .custom-input__icon {
+        transition: color var(--transition-300);
+    }
+
+
 }
 
 

@@ -1,12 +1,12 @@
 .btn {
     cursor: pointer;
-    color: var(--color-white);
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
     white-space: nowrap;
     padding: 0;
+    outline: none;
 
     //variants
 
@@ -14,22 +14,23 @@
         font-weight: 700;
         font-size: 18px;
         line-height: 24px;
+        color: var(--color-white);
         background-color: var(--color-montana);
         border-radius: 28px;
 
         &:hover,
-        &:focus-visible {
+        &:focus-within {
             background-color: var(--color-blue-jeans);
 
         }
     }
 
     &--invert {
-        color: var(--color-black);
-        background-color: var(--color-white);
+        color: var(--color-invert-btn);
+        background-color: transparent;
 
         &:hover,
-        &:focus-visible {
+        &:focus-within {
             color: var(--color-white);
 
         }

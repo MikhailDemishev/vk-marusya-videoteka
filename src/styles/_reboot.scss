@@ -8,10 +8,9 @@
 }
 
 body {
-  font-family: $ff-main;
+  font-family: var(--ff-main);
   font-style: normal;
   font-weight: 400;
-  color: var(--color-white);
   margin: 0;
   padding: 0;
 }
@@ -20,8 +19,6 @@ body {
 
 main {
   flex: 1;
-  position: relative;
-
   position: relative;
 
   & .loader {
@@ -48,6 +45,10 @@ img {
 }
 
 a {
-  color: var(--color-white);
+  color: var(--color-link);
   text-decoration: none;
+}
+
+button {
+  color: inherit;
 }

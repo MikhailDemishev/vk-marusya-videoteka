@@ -5,7 +5,8 @@
     &__dropdown {
         border-radius: 8px;
         width: 559px;
-        background-color: var(--color-iridium);
+        background-color: var(--color-search-background);
+        border: 1px solid var(--color-search-border);
         padding: 16px;
         top: calc(100% + 12px);
         right: 0;
