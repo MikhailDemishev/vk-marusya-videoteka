@@ -3,7 +3,7 @@ import sprite from "/src/assets/images/sprite/sprite.svg";
 import "./Button.scss";
 
 
-interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     isDisabled?: boolean;
     type?: "submit" | "reset" | "button";
     variant?: "primary" | "secondary" | "menu" | "link" | "close";

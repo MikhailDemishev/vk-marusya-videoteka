@@ -1,5 +1,12 @@
+@use "@/styles/mixins" as *;
+
 .header {
     padding: 24px 0;
+
+    @include vp-767 {
+        padding: 16px 0;
+    }
+
 
     &__inner {
         display: flex;
@@ -7,30 +14,102 @@
         gap: 80px;
     }
 
-
-    &__controls {
+    &__left {
         display: flex;
         align-items: center;
-        gap: 80px;
-        flex: 1;
     }
 
-    &__primary {
+    &__app-logo {
+
+
+        @include vp-767 {
+            gap: 7px;
+            padding-left: 0;
+        }
+
+        & svg {
+            @include vp-767 {
+                transform: scale(0.56);
+                transform-origin: center;
+            }
+        }
+
+        & .app-logo__icon--img {
+            @include vp-767 {
+                width: 25px;
+                height: 32px;
+
+
+            }
+        }
+
+        & .app-logo__icon--text {
+            @include vp-767 {
+                width: 100px;
+                height: 21px;
+                margin-left: -30px;
+
+            }
+        }
+    }
+
+    &__right {
         display: flex;
         align-items: center;
+        flex: 1;
         gap: 40px;
-        flex: 1;
+
+        @include vp-767 {
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
     }
+
+
 
     &__search {
         flex: 1;
         max-width: 656px;
+
+        @include vp-767 {
+            width: 100%;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__btn {
+        margin-left: 40px;
+
+        @include vp-767 {
+            margin: 0;
+        }
     }
 
     &__btn,
     &__nav {
         flex-shrink: 0;
     }
+
+    // &__nav {
+    //     @include vp-767 {
+    //         display: none;
+    //     }
+    // }
+
+    &__btn-icon {
+        @include vp-767 {
+            width: 24px;
+            height: 24px;
+            color: var(--color-header-btn);
+            flex-shrink: 0;
+        }
+    }
+
 }
 
 .header__controls,

@@ -4,9 +4,14 @@ import { MemoizedDropDownWindow } from "../../Dropdown/DropdownWindow/DropDownWi
 import { DropDownList } from "../../Dropdown/DropDownList/DropDownList";
 import "./HeaderSearch.scss";
 import { MovieSearchCard } from "../../Dropdown/DropDownCards/MovieSearchCard/MovieSearchCard";
+import type { FC } from "react";
 
+interface IHeaderSearch {
+    onResetHeader?: () => (void);
+}
 
-export const HeaderSearch = () => {
+export const HeaderSearch: FC<IHeaderSearch> = ({ onResetHeader = () => { } }) => {
+
 
 
     const { handleInput,
@@ -15,6 +20,7 @@ export const HeaderSearch = () => {
         searchQuery,
         dropDownState,
     } = useShowSearchResults()
+
 
     return (
         <div className="header__search header-search">
@@ -27,7 +33,10 @@ export const HeaderSearch = () => {
                 id="icon-search"
                 iconId="icon-search"
                 resetField
-                onReset={resetSearch}
+                onReset={() => {
+                    resetSearch();
+                    onResetHeader();
+                }}
                 value={searchQuery}
             />
             <MemoizedDropDownWindow className="header-search" isOpen={dropDownState}>

@@ -1,3 +1,5 @@
+@use "@/styles/mixins" as *;
+
 .header-search {
     position: relative;
     z-index: 10;
@@ -11,6 +13,9 @@
         top: calc(100% + 12px);
         right: 0;
 
+        @include vp-767 {
+            width: 100%;
+        }
 
     }
 }

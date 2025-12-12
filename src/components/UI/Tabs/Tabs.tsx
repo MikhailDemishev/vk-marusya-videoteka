@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import "./Tabs.scss";
 import sprite from "/src/assets/images/sprite/sprite.svg";
-import { useIsAnyDevice } from "../../../app/hooks/useIsAnyDevice";
+import { useViewportFlags } from "../../../app/hooks/useViewPortFlags";
 
 export interface ITab {
     tabId: string;
@@ -32,7 +32,8 @@ export const Tabs: FC<ITabProps> = ({
     ...props
 }) => {
     const classes = `${TabsClassName}-tabs tabs `.trim();
-    const isMobile = useIsAnyDevice(768)
+    const { isMobile } = useViewportFlags();
+
 
     return (
         <div className={classes} {...props}>
