@@ -60,6 +60,9 @@
         --color-invert-btn: var(--color-white);
         --color-header-btn: var(--color-white);
 
+        /*nav*/
+        --color-nav-burger: var(--color-black);
+
         /*colors*/
 
         --color-white: #FFFFFF;
@@ -143,7 +146,7 @@
         --color-profile-logo: var(--color-lucky-grey);
 
         /*auth-card*/
-        --color-auth-background: var(--color-cascading-white);
+        --color-auth-background: var(--color-white);
         --color-auth-input-background: var(--color-white-15);
         --color-auth-input-placeholder: var(--color-black-40);
         --color-auth-input-text: var(--color-black);
@@ -153,4 +156,7 @@
         --color-invert-btn: var(--color-black);
         --color-header-btn: var(--color-black);
 
+
+        /*nav*/
+        --color-nav-burger: var(--color-white);
     }

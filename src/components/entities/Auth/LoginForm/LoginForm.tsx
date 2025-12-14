@@ -31,13 +31,9 @@ export const LoginForm = (
         <form
             className="login-form"
             onSubmit={handleSubmit((values) => {
-                //убрать
-                console.log('Отправка формы логина:', values);
                 loginMutation.mutate(values, {
                     onSuccess: () => {
                         reset();
-                        //убрать
-                        console.log("form cleared");
                     }
                 });
             })}>

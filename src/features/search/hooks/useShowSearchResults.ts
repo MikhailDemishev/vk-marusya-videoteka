@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 
 export const useShowSearchResults = () => {
     const [searchQuery, setSearchQuery] = useState('');
-    const { data: foundMovies, isFetching, isFetched } = useMoviesByTitle(searchQuery);
+    const { data: foundMovies } = useMoviesByTitle(searchQuery);
 
 
     const dropDownState = useAppSelector(selectDropDownIsOpen);
@@ -27,7 +27,6 @@ export const useShowSearchResults = () => {
         } else {
             handleOpenDropDown();
         }
-        console.log('FETCH STATE:', { isFetching, isFetched, foundMovies })
     }
 
     useEffect(() => {

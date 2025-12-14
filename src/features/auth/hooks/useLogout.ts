@@ -11,8 +11,6 @@ export function useLogout() {
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["profile"] });
             queryClient.resetQueries({ queryKey: ["profile"] });
-
-            console.log('logged out');
         },
 
         onError: (error: unknown) => {
@@ -21,7 +19,6 @@ export function useLogout() {
             }
         },
     })
-
 
     return loginMutation
 }

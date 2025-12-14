@@ -3,7 +3,8 @@
 .header {
     padding: 24px 0;
 
-    @include vp-767 {
+
+    @include vp-1023 {
         padding: 16px 0;
     }
 
@@ -13,7 +14,7 @@
         align-items: center;
         gap: 80px;
 
-        @include vp-767 {
+        @include vp-1023 {
             justify-content: space-between;
         }
     }
@@ -26,12 +27,22 @@
     &__app-logo {
 
 
-        @include vp-767 {
-            gap: 7px;
+        @include vp-1023 {
+            gap: 15px;
             padding-left: 0;
         }
 
+        @include vp-767 {
+            gap: 7px;
+        }
+
         & svg {
+
+            @include vp-1023 {
+                transform: scale(0.7);
+                transform-origin: center;
+            }
+
             @include vp-767 {
                 transform: scale(0.56);
                 transform-origin: center;
@@ -39,7 +50,7 @@
         }
 
         & .app-logo__icon--img {
-            @include vp-767 {
+            @include vp-1023 {
                 width: 25px;
                 height: 32px;
 
@@ -48,7 +59,7 @@
         }
 
         & .app-logo__icon--text {
-            @include vp-767 {
+            @include vp-1023 {
                 width: 100px;
                 height: 21px;
                 margin-left: -30px;
@@ -63,7 +74,7 @@
         flex: 1;
         gap: 40px;
 
-        @include vp-767 {
+        @include vp-1023 {
             justify-content: flex-end;
             gap: 20px;
             flex: 0;
@@ -86,7 +97,7 @@
         flex: 1;
         max-width: 656px;
 
-        @include vp-767 {
+        @include vp-1023 {
             width: 100%;
         }
     }
@@ -98,7 +109,7 @@
 
     &__btn {
 
-        @include vp-767 {
+        @include vp-1023 {
             width: 24px;
             height: 24px;
         }
@@ -109,7 +120,7 @@
             & .btn__info--mobile {
                 display: none;
 
-                @include vp-767 {
+                @include vp-1023 {
                     width: 100%;
                     display: flex;
                     align-items: center;
@@ -125,7 +136,7 @@
             }
 
             & .btn__info--desktop {
-                @include vp-767 {
+                @include vp-1023 {
                     display: none;
                 }
             }
@@ -138,7 +149,7 @@
         &--search {
             display: none;
 
-            @include vp-767 {
+            @include vp-1023 {
                 display: block;
             }
         }
@@ -151,20 +162,20 @@
             & .header__btn-icon {
                 display: none;
 
-                @include vp-767 {
+                @include vp-1023 {
                     display: block;
                 }
             }
 
             & .header__btn-text {
 
-                @include vp-767 {
+                @include vp-1023 {
                     display: none;
                 }
             }
         }
 
-        @include vp-767 {
+        @include vp-1023 {
             margin: 0;
         }
     }

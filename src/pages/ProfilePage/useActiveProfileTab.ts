@@ -5,9 +5,7 @@ export const useActiveProfileTab = () => {
 
     const handleActiveTab = (id: string): void => {
         setActiveTab(id)
-        console.log(activeTab);
     }
 
     return { handleActiveTab, activeTab }
-
 }

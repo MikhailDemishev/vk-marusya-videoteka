@@ -6,7 +6,8 @@
     gap: 64px;
 
     @include vp-767 {
-        gap: 24px;
+        justify-content: space-between;
+        gap: 0;
     }
 
 

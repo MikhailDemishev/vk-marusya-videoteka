@@ -13,7 +13,6 @@ interface IMovieTrailer {
 
 
 export const MovieTrailer: FC<IMovieTrailer> = ({ trailerUrl, trailerDesc }) => {
-    console.log(trailerUrl);
 
     if (trailerUrl) {
         const youtubeId = trailerUrl!.split('v=')[1];
@@ -34,6 +33,5 @@ export const MovieTrailer: FC<IMovieTrailer> = ({ trailerUrl, trailerDesc }) => 
         return (
             <p className="movie-trailer__warning">Для этого фильма трейлер недоступен</p >
         )
-
     }
 }

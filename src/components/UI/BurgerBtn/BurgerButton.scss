@@ -1,7 +1,7 @@
 @use "@/styles/mixins" as *;
 
 .burger {
-    @include vp-767 {
+    @include vp-1023 {
         background-color: transparent;
         padding: 0;
         border: none;
@@ -19,7 +19,7 @@
         &__icon {
             width: 100%;
             height: 100%;
-            background-color: var(--color-white);
+            background-color: var(--color-main);
             height: 2px;
             position: relative;
             transition: background-color var(--transition-300);
@@ -28,7 +28,7 @@
             &::before,
             &::after {
                 position: absolute;
-                background-color: var(--color-white);
+                background-color: var(--color-main);
                 content: "";
                 height: 2px;
                 width: 100%;
@@ -48,7 +48,7 @@
 
 
                 &::after {
-                    background-color: var(--color-white);
+                    background-color: var(--color-main);
                     top: 50%;
                     transform: translateY(-50%) rotate(45deg);
                     transition: background-color var(--transition-300), transform var(--transition-300) 0.3s, top var(--transition-300);
@@ -56,7 +56,7 @@
                 }
 
                 &::before {
-                    background-color: var(--color-white);
+                    background-color: var(--color-main);
                     top: 50%;
                     transform: translateY(-50%) rotate(-45deg);
                     transition: background-color var(--transition-300), transform var(--transition-300) 0.3s, top var(--transition-300);

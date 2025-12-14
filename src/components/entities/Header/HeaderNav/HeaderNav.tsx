@@ -5,9 +5,9 @@ interface IHeaderNav {
     onResetBurger?: () => (void);
 }
 
-export const HeaderNav: FC<IHeaderNav> = () => {
+export const HeaderNav: FC<IHeaderNav> = ({ onResetBurger }) => {
     return (
-        <Nav
+        <Nav onClick={onResetBurger}
             items={[
                 { label: "Главная", to: "/" },
                 { label: "Жанры", to: "/genres" },

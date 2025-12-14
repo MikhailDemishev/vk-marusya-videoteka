@@ -20,21 +20,15 @@ export const PageBoundary: FC<IPageBoundaryProps> = ({ isLoading, isError, child
         return <Loader />
     }
 
-
-
     if (isError) {
         return (
             <div className="page-notfound">
                 <span className="page-notfound__warning">Страница недоступна</span>
                 <span className="page-notfound__text">Пожалуйста, нажмите на кнопку ниже, чтобы перезагрузить страницу</span>
-                <Button className="page-notfound__reload" size="m" onClick={() => {
-                    console.log("⟳ INVALIDATE QUERIES → повторная загрузка страницы");
-                    queryClient.invalidateQueries();
-                }} >перезагрузить страницу</Button>
+                <Button className="page-notfound__reload" size="m" onClick={() => { queryClient.invalidateQueries() }} >перезагрузить страницу</Button>
             </div>
         )
     }
-
 
     return children
 }

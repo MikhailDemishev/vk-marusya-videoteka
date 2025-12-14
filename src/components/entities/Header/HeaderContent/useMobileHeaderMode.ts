@@ -8,8 +8,6 @@ export function useMobileHeaderMode() {
         setMobileMode(mobileMode === "burger" ? "menu" : "burger");
     };
 
-    console.log(mobileMode);
-
     return {
         mobileMode,
         toggleBurger,

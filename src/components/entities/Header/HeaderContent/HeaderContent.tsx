@@ -30,7 +30,7 @@ export const HeaderContent = () => {
                             <use href={`${sprite}#mobile-nav`} xlinkHref={`${sprite}#mobile-nav`} />
                         </svg>
                     </Button>
-                    <HeaderNav />
+                    <HeaderNav onResetBurger={resetToDefault} />
                 </div>
                 <div className="header__panel">
                     <Button variant="menu" className="header__btn header__btn--search" onClick={openSearch}>

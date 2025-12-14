@@ -24,7 +24,7 @@ export const GENRE_CONFIG = {
         image: "/src/assets/images/genres/drama.jpg",
     },
     mystery: {
-        name: "детектив / мистика",
+        name: "детектив",
         image: "/src/assets/images/genres/mystery.jpg",
     },
     family: {

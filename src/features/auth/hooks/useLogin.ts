@@ -14,18 +14,9 @@ export function useLogin() {
         mutationFn: (data: LoginType) => loginUser(data),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["profile"] });
-            console.log('successful Login');
-            console.log("COOKIES:", document.cookie);
             dispatch(closeModal())
         },
-
-        onError: (error: unknown) => {
-            if (error instanceof Error) {
-                console.error(error.message);
-            }
-        },
     })
-
 
     return loginMutation
 }
