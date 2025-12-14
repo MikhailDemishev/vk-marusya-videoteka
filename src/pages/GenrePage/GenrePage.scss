@@ -1,8 +1,20 @@
+@use "@/styles/mixins" as *;
+
 .genre-section {
+
+    @include vp-767 {
+        padding: 16px 0 32px;
+        gap: 38px;
+    }
+
     &__header {
         display: flex;
         align-items: center;
         gap: 16px;
+
+        @include vp-767 {
+            gap: 8px;
+        }
     }
 
     &__backlink {
@@ -12,11 +24,52 @@
         align-items: center;
         justify-content: center;
         position: relative;
+
+        @include vp-767 {
+            width: 32px;
+            height: 32px;
+        }
     }
 
     &__backlink-logo {
         width: 13px;
         height: 21px;
         color: var(--color-white);
+
+        @include vp-767 {
+            width: 11px;
+            height: 17px;
+        }
     }
+
+    &__content {
+        @include vp-767 {
+            width: 100%;
+        }
+
+    }
+
+    & .movie-grid {
+        @include vp-767 {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 24px;
+        }
+
+        .movie-card {
+            width: 100%;
+
+            &__img {
+                min-height: 502px;
+                aspect-ratio: 335/502;
+            }
+        }
+    }
+
+    &__btn {
+        width: 100%;
+    }
+
+
 }

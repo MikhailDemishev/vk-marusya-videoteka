@@ -6,7 +6,7 @@ import "./Button.scss";
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     isDisabled?: boolean;
     type?: "submit" | "reset" | "button";
-    variant?: "primary" | "secondary" | "menu" | "link" | "close";
+    variant?: "primary" | "secondary" | "menu" | "link" | "close" | "other";
     size?: "l" | "m" | "s";
 }
 

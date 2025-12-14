@@ -27,24 +27,23 @@ export const MovieBanner: FC<IMovieBanner> = ({
     const { handleTrailerOpen } = useTrailerModal()
     console.log('banner', movie);
 
-    /*
-    ==================DEBUG==============
-    movie = {
-    id: 759872,
-    title: "The Farmer and the Belle: Saving Santaland",
-    originalTitle: "The Farmer and the Belle: Saving Santaland",
-    language: "en",
-    releaseYear: 2020,
-    backdropUrl: "https://cinemaguide.skillbox.cc/images/759872/qEBIJ2ZjyoteV2ACAh91IrowJfK.jpg",
-    posterUrl: "https://cinemaguide.skillbox.cc/images/759872/tOtzpBwxMz0pmX0hno123pW7qPf.jpg",
-    plot: "Sparks fly between a famous model and a farmer with a young daughter when she visits her childhood home. The town is in danger of losing their beloved Santaland festival, but miracles can happen with a little love, family, and faith.",
-    genres: ["family", "comedy", "romance"],
-    trailerUrl: "https://youtube.com/watch?v=-WJmjnou5Rs",
-    tmdbRating: 5.4,
-    runtime: 90,
-};
 
-    */
+    //  ==================DEBUG==============
+    movie = {
+        id: 759872,
+        title: "Шерлок Холмс и доктор Ватсон: Знакомство",
+        originalTitle: "The Farmer and the Belle: Saving Santaland",
+        language: "en",
+        releaseYear: 2020,
+        backdropUrl: "https://cinemaguide.skillbox.cc/images/759872/qEBIJ2ZjyoteV2ACAh91IrowJfK.jpg",
+        posterUrl: "https://cinemaguide.skillbox.cc/images/759872/tOtzpBwxMz0pmX0hno123pW7qPf.jpg",
+        plot: "Увлекательные приключения самого известного сыщика всех времен",
+        genres: ["детектив"],
+        trailerUrl: "https://youtube.com/watch?v=-WJmjnou5Rs",
+        tmdbRating: 5.4,
+        runtime: 90,
+    };
+
 
 
 

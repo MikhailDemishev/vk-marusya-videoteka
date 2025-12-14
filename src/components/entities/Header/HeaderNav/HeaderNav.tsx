@@ -1,8 +1,11 @@
+import type { FC } from "react";
 import { Nav } from "../../../UI/Nav/Nav"
 import "./HeaderNav.scss";
+interface IHeaderNav {
+    onResetBurger?: () => (void);
+}
 
-
-export const HeaderNav = () => {
+export const HeaderNav: FC<IHeaderNav> = () => {
     return (
         <Nav
             items={[
@@ -10,6 +13,7 @@ export const HeaderNav = () => {
                 { label: "Жанры", to: "/genres" },
             ]}
             className="header__nav"
-        ></Nav>
+        >
+        </Nav>
     )
 }

@@ -12,6 +12,10 @@
         display: flex;
         align-items: center;
         gap: 80px;
+
+        @include vp-767 {
+            justify-content: space-between;
+        }
     }
 
     &__left {
@@ -62,10 +66,20 @@
         @include vp-767 {
             justify-content: flex-end;
             gap: 20px;
+            flex: 0;
         }
-
     }
 
+    &__menu {
+        display: flex;
+        align-items: center;
+    }
+
+    &__panel {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
 
 
     &__search {
@@ -83,31 +97,94 @@
     }
 
     &__btn {
-        margin-left: 40px;
+
+        @include vp-767 {
+            width: 24px;
+            height: 24px;
+        }
+
+        &--auth {
+            margin-left: 40px;
+
+            & .btn__info--mobile {
+                display: none;
+
+                @include vp-767 {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: var(--color-white);
+                    color: var(--color-black);
+                    border-radius: 50%;
+                    padding: 5px;
+                    font-size: 14px;
+                    line-height: 14px;
+                    font-weight: 700;
+                }
+            }
+
+            & .btn__info--desktop {
+                @include vp-767 {
+                    display: none;
+                }
+            }
+        }
+
+
+
+        &--burger,
+        &--menu,
+        &--search {
+            display: none;
+
+            @include vp-767 {
+                display: block;
+            }
+        }
+
+        &-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & .header__btn-icon {
+                display: none;
+
+                @include vp-767 {
+                    display: block;
+                }
+            }
+
+            & .header__btn-text {
+
+                @include vp-767 {
+                    display: none;
+                }
+            }
+        }
 
         @include vp-767 {
             margin: 0;
         }
     }
 
+
+
+
     &__btn,
     &__nav {
         flex-shrink: 0;
     }
 
-    // &__nav {
-    //     @include vp-767 {
-    //         display: none;
-    //     }
-    // }
+
+
 
     &__btn-icon {
-        @include vp-767 {
-            width: 24px;
-            height: 24px;
-            color: var(--color-header-btn);
-            flex-shrink: 0;
-        }
+        width: 24px;
+        height: 24px;
+        color: var(--color-header-btn);
+        flex-shrink: 0;
     }
 
 }
@@ -115,5 +192,5 @@
 .header__controls,
 .header__primary,
 .header__search {
-    min-width: 0;
+    min-width: auto;
 }

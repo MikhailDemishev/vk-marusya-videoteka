@@ -1,7 +1,6 @@
 import type { FC } from "react";
 import "./Tabs.scss";
 import sprite from "/src/assets/images/sprite/sprite.svg";
-import { useViewportFlags } from "../../../app/hooks/useViewPortFlags";
 
 export interface ITab {
     tabId: string;
@@ -32,7 +31,6 @@ export const Tabs: FC<ITabProps> = ({
     ...props
 }) => {
     const classes = `${TabsClassName}-tabs tabs `.trim();
-    const { isMobile } = useViewportFlags();
 
 
     return (
@@ -50,7 +48,8 @@ export const Tabs: FC<ITabProps> = ({
                             <use href={`${sprite}#${tab.icon}`} xlinkHref={`${sprite}#${tab.icon}`} />
                         </svg>
                     </span>
-                    <span className="tab__label">{isMobile ? tab.labelMobile : tab.label}</span>
+                    <span className="tab__label">{tab.label}</span>
+                    <span className="tab__label tab__label--mobile">{tab.labelMobile}</span>
                 </button>
 
             ))}

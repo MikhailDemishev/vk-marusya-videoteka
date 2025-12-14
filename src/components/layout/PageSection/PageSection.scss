@@ -1,3 +1,5 @@
+@use "@/styles/mixins" as *;
+
 .page-section {
     padding: 64px 0 160px;
     display: flex;
@@ -10,6 +12,13 @@
         line-height: 56px;
         display: flex;
         margin: 0;
+
+        @include vp-767 {
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+
     }
 
     [class$="__content"] {
@@ -18,6 +27,10 @@
         align-items: center;
         justify-content: center;
         gap: 64px;
+
+        @include vp-767 {
+            gap: 40px;
+        }
     }
 
 }

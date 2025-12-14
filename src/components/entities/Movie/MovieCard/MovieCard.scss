@@ -1,6 +1,10 @@
+@use "@/styles/mixins" as *;
+
 .movie-card {
     display: flex;
     position: relative;
+
+
 
 
     &__img {
@@ -25,6 +29,8 @@
         position: absolute;
         top: -12px;
         left: -12px;
+
+
     }
 
     & .btn--close {

@@ -1,7 +1,13 @@
+@use "@/styles/mixins" as *;
+
 .movie-info {
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @include vp-767 {
+        gap: 12px;
+    }
 
     &__row {
         display: grid;
@@ -10,17 +16,37 @@
         font-size: 18px;
         line-height: 24px;
         gap: 8px;
+
+        @include vp-767 {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
     }
 
     &__label {
         display: flex;
         gap: 8px;
 
+        @include vp-767 {
+            gap: 4px;
+        }
+
+        &-name {
+            font-size: 14px;
+            line-height: 20px;
+            color: var(--color-translucent);
+        }
+
         &-line {
             height: 1px;
             border: 1px dashed var(--color-translucent);
             flex-grow: 1;
             transform: translateY(17px);
+
+            @include vp-767 {
+                display: none;
+            }
         }
     }
 

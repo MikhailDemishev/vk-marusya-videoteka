@@ -8,7 +8,7 @@ export const GENRE_CONFIG = {
         image: "/src/assets/images/genres/horror.jpg",
     },
     scifi: {
-        name: "научная фантастика",
+        name: "фантастика",
         image: "/src/assets/images/genres/scifi.jpg",
     },
     "stand-up": {

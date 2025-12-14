@@ -13,7 +13,7 @@ export const profileTabs: ITab[] = [
     {
         tabId: "profile",
         label: "Настройка аккаунта",
-        labelMobile: "Профиль",
+        labelMobile: "Настройки",
         icon: "icon-avatar",
         iconWidth: "16",
         iconHeight: "21",

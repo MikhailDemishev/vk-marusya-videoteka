@@ -1,3 +1,5 @@
+@use "@/styles/mixins" as *;
+
 .genre-card {
     background-color: var(--color-genre-card);
     border-radius: 24px;
@@ -8,12 +10,21 @@
     height: 100%;
     overflow: hidden;
 
+    @include vp-767 {
+        width: 100%;
+    }
+
 
     &__img {
         width: 100%;
         height: 220px;
         border-radius: 24px 24px 0 0;
         object-position: top;
+
+        @include vp-767 {
+            aspect-ratio: 335/220;
+            height: auto;
+        }
     }
 
     &__inner {
@@ -22,6 +33,7 @@
         align-items: flex-end;
         align-items: center;
         padding: 22px 30px 30px;
+
     }
 
     &__genre {

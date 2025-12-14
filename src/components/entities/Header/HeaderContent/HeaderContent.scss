@@ -1,0 +1,134 @@
+@use "@/styles/mixins" as *;
+
+.header__inner {
+
+    &--default {
+        @include vp-767 {
+            display: flex;
+
+            & .header__btn--burger,
+            & .header__search,
+            & .header__nav,
+            & .header__btn--close {
+                @include hidden;
+            }
+
+
+
+        }
+    }
+
+
+    &--search {
+
+        @include vp-767 {
+            display: flex;
+            width: 100%;
+
+            & .header__left,
+            & .header__nav,
+            & .header__btn {
+                @include hidden;
+            }
+
+            & .header__panel {
+                width: 100%;
+                display: flex;
+            }
+
+            & .header__right {
+                display: flex;
+                justify-content: flex-start;
+                width: 100%;
+                flex: 1;
+                gap: 0;
+            }
+
+            & .header__search {
+                opacity: 1;
+                max-width: none;
+                pointer-events: all;
+                width: 100%;
+            }
+        }
+    }
+
+    &--menu,
+    &--burger {
+
+        @include vp-767 {
+            display: flex;
+            justify-content: space-between;
+
+            .header__left {
+                display: flex;
+                gap: 10px;
+            }
+
+
+            & .header__panel,
+            & .header__btn--menu,
+            & .header__btn--nav,
+            & .header__btn--close,
+            & .header__nav {
+                @include hidden;
+            }
+
+
+            & .header__btn--auth {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+
+    }
+
+    &--burger {
+
+
+        @include vp-767 {
+            position: relative;
+
+            & .header__nav {
+                opacity: 1;
+                pointer-events: all;
+                position: absolute;
+                top: 0;
+                left: 50px;
+                background-color: var(--color-black);
+                flex-direction: column;
+                gap: 24px;
+                z-index: 10;
+            }
+
+            & .header__nav .nav__link {
+                font-size: 18px;
+                line-height: 24px;
+            }
+
+            & .header__link {
+                @include hidden;
+            }
+
+
+            & .header__btn--burger {
+                &::after {
+                    background-color: var(--color-white);
+                    top: 50%;
+                    transform: translateY(-50%) rotate(45deg);
+                    transition: background-color var(--transition-300), transform var(--transition-300) 0.3s, top var(--transition-300);
+
+                }
+
+                &::before {
+                    background-color: var(--color-white);
+                    top: 50%;
+                    transform: translateY(-50%) rotate(-45deg);
+                    transition: background-color var(--transition-300), transform var(--transition-300) 0.3s, top var(--transition-300);
+                }
+            }
+
+        }
+    }
+
+}

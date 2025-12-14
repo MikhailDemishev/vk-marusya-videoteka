@@ -1,34 +1,44 @@
-.nav {
-    display: flex;
-    gap: 40px;
+ @use "@/styles/mixins" as *;
 
-    &__link {
-        font-size: 24px;
-        line-height: 32px;
-        position: relative;
+ .nav {
+     display: flex;
+     gap: 40px;
 
-        &::after {
-            content: "";
-            width: 100%;
-            height: 1px;
-            background-color: var(--color-flamingo);
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform var(--transition-300);
-        }
-
-        &--active {
-
-            &::after,
-            &::after {
-                transform: scaleX(1);
-            }
+     &__link {
+         font-size: 24px;
+         line-height: 32px;
+         position: relative;
+         transition: color var(--transition-300);
 
 
-        }
 
-    }
-}
+         &::after {
+             content: "";
+             width: 100%;
+             height: 1px;
+             background-color: var(--color-flamingo);
+             position: absolute;
+             left: 0;
+             bottom: -8px;
+             transform: scaleX(0);
+             transform-origin: left;
+             transition: transform var(--transition-300);
+
+             @include vp-767 {
+                 display: none;
+             }
+         }
+
+         &--active {
+             &::after {
+                 transform: scaleX(1);
+             }
+
+             @include vp-767 {
+                 color: var(--color-winterspring-lilac);
+             }
+
+         }
+
+     }
+ }

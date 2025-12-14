@@ -1,7 +1,15 @@
+@use "@/styles/mixins" as *;
+
 .tabs {
     display: flex;
     align-items: center;
     gap: 64px;
+
+    @include vp-767 {
+        gap: 24px;
+    }
+
+
 }
 
 .tab {
@@ -16,6 +24,10 @@
     border: none;
     cursor: pointer;
     position: relative;
+
+    @include vp-767 {
+        gap: 4px;
+    }
 
     &::after {
         content: "";
@@ -60,6 +72,20 @@
             height: 21px;
         }
 
+    }
+
+    &__label {
+        @include vp-767 {
+            display: none;
+        }
+
+        &--mobile {
+            display: none;
+
+            @include vp-767 {
+                display: block;
+            }
+        }
     }
 
 }
